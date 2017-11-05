@@ -5,3 +5,4 @@ Atlas Guide seeks to provide travelers a unique way of experiencing the cities a
 ## Installation Notes
 This application requires the following environment variables to be set on the server. Add a file titled .env to the root of your server with the following values set in it.
 - SECRETKEY: This is a string of any length is used for secure authentication of users' sessions.
+- PORT (optional): This sets the port that the app will listen on. If not set the default port will be 3000
