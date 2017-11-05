@@ -1,0 +1,26 @@
+{
+  "name": "atlas-guide",
+  "version": "1.0.0",
+  "description": "Greatness incarnate.",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BriantOliveira/Atlas-Guide.git"
+  },
+  "author": "Justin Sitter and Elliot Oliveira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BriantOliveira/Atlas-Guide/issues"
+  },
+  "homepage": "https://github.com/BriantOliveira/Atlas-Guide#readme",
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
