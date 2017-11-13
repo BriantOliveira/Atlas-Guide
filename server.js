@@ -9,17 +9,11 @@ const cookieParser = require('cookie-parser')
 const express = require('express')
 const hbs = require('express-handlebars')
 const jwt = require('jsonwebtoken')
-const mongoose = require('mongoose')
-const port = process.env.PORT || 3000
+
+const port = 8282
 
 //Instantiate express
 const app = express()
-
-//connect to database
-mongoose.connect('localhost/atlas-guide')
-
-//use javascript global promise instead of deprecated mongoose
-mongoose.Promise = global.Promise
 
 /****************************************************
  *  Check for login token on every request

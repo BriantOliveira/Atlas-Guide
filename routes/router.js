@@ -2,10 +2,13 @@
  *  Atlas Guide
  *      Your Source for excellence
  *      Router File
- *  v. 1.0.0 Beta
  ******************************************/
 module.exports = (app)=>{
-    app.get('/', function (req, res) {
-        res.render('index');
+    app.get('/', (req, res)=>{
+        res.render('index')
+    })
+
+    app.get('/signup', (req, res)=>{
+        res.render('signup')
     })
 }
