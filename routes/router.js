@@ -1,6 +1,6 @@
 /*******************************************
  *  Atlas Guide
- *      Your Source for excellence
+ *      Your Source for travel itineraries
  *      Router File
  ******************************************/
 module.exports = (app)=>{
@@ -11,4 +11,5 @@ module.exports = (app)=>{
     app.get('/signup', (req, res)=>{
         res.render('signup')
     })
+
 }

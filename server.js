@@ -3,17 +3,19 @@
  *      Your Source for excellence
  *  v. 1.0.0 Beta
  ******************************************/
-
+require('dotenv').config()
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const express = require('express')
 const hbs = require('express-handlebars')
 const jwt = require('jsonwebtoken')
 
-const port = 8282
+
 
 //Instantiate express
 const app = express()
+
+const PORT = process.env.PORT || 3000
 
 /****************************************************
  *  Check for login token on every request
@@ -52,6 +54,6 @@ app.set('view engine', 'hbs')
 require('./routes/router.js')(app)
 
 // Listen on port
-app.listen(port, function () {
-    console.log('Atlas listening on port', port);
+app.listen(PORT, function () {
+    console.log('Atlas listening on port', PORT);
 })
