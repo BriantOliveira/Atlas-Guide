@@ -1,6 +1,6 @@
 /*******************************************
  *  Atlas Guide
- *      Your Source for excellence
+ *      Your Source for excell 
  *  v. 1.0.0 Beta
  ******************************************/
 require('dotenv').config()
@@ -38,17 +38,34 @@ let verifyAuthentication = (req, res, next)=>{
     next()
   }
 
+
 /****************************************************
  *  Add Middlewarez
  ***************************************************/
+
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(verifyAuthentication)
 // Set up a static public directory
-app.use(express.static('public'))
+app.use(express.static('./public'))
 // Setup handlebars view engine and pass in parameters
 app.engine('hbs', hbs({defaultLayout: 'main', extname: 'hbs'}))
 app.set('view engine', 'hbs')
+
+// ERROR HANDLING
+app.use(function (req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
+
+app.use(function (err, req, res, next) {
+  if (err.status == 404) {
+
+    //do logging and user-friendly error message display
+    res.redirect('/404.html');
+  }
+});
 
 // Load Routes
 require('./routes/router.js')(app)
