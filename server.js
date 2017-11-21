@@ -10,8 +10,6 @@ const express = require('express')
 const hbs = require('express-handlebars')
 const jwt = require('jsonwebtoken')
 
-
-
 //Instantiate express
 const app = express()
 
@@ -52,13 +50,13 @@ app.use(express.static('./public'))
 app.engine('hbs', hbs({defaultLayout: 'main', extname: 'hbs'}))
 app.set('view engine', 'hbs')
 
-// ERROR HANDLING
+// Add 404 Error page routing
 app.use(function (req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
-
+//Redirect to 404 page
 app.use(function (err, req, res, next) {
   if (err.status == 404) {
 
