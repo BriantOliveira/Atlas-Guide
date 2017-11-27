@@ -1,6 +1,6 @@
 /*******************************************
  *  Atlas Guide
- *      Your Source for excell 
+ *      Your Source for excellent travel 
  *  v. 1.0.0 Beta
  ******************************************/
 require('dotenv').config()
