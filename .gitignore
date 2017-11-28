@@ -30,4 +30,4 @@ book.epub
 book.mobi
 
 #Exclude postgres database settings
-config.json
+server/config/config.json
