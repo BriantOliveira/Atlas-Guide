@@ -13,3 +13,4 @@ Update /server/cofig/config.json with the proper username for the database.
 
 ## Todo
 Setup twilio to text users upcoming events
+Add events from http://www.sftravel.com and www.sftourismtips.com
