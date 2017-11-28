@@ -50,6 +50,10 @@ app.use(express.static('./public'))
 app.engine('hbs', hbs({defaultLayout: 'main', extname: 'hbs'}))
 app.set('view engine', 'hbs')
 
+
+// Load Routes
+require('./routes/router.js')(app)
+
 // Add 404 Error page routing
 app.use(function (req, res, next) {
   var err = new Error('Not Found');
@@ -65,8 +69,6 @@ app.use(function (err, req, res, next) {
   }
 });
 
-// Load Routes
-require('./routes/router.js')(app)
 
 // Listen on port
 app.listen(PORT, function () {
