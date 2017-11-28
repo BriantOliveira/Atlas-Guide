@@ -10,3 +10,6 @@ This application requires the following environment variables to be set on the s
 Run `sequelize init` to create database configuration files that aren't included in this repo.
 
 Update /server/cofig/config.json with the proper username for the database.
+
+## Todo
+Setup twilio to text users upcoming events
