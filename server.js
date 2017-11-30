@@ -73,4 +73,4 @@ app.use(function (err, req, res, next) {
 // Listen on port
 app.listen(PORT, function () {
     console.log('Atlas listening on port', PORT);
-})
+});

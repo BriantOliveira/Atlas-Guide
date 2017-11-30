@@ -3,13 +3,14 @@
  *      Your Source for travel itineraries
  *      Router File
  ******************************************/
-module.exports = (app)=>{
-    app.get('/', (req, res)=>{
-        res.render('index')
-    })
+module.exports = function (app) {
 
-    app.get('/signup', (req, res)=>{
-        res.render('signup')
-    })
+    app.get('/', function (req, res) {
+        res.render('index');
+    });
 
-}
+    app.get('/signup', function (req, res) {
+        res.render('signup');
+    });
+
+};
