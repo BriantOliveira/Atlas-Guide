@@ -8,6 +8,9 @@ module.exports = function (app) {
     app.get('/', function (req, res) {
         res.render('index');
     });
-    
+
+    //Routes
+    require('./signup')(app);
+    require('./login')(app);
 
 };
