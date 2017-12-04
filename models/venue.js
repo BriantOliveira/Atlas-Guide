@@ -9,12 +9,10 @@ module.exports = (sequelize, DataTypes) => {
     long: DataTypes.DECIMAL,
     address: DataTypes.STRING,
     venue_type: DataTypes.STRING
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
   });
+
+  Venues.associate = function (models) {
+      Venues.hasMany(models.Events);
+  }
   return Venues;
 };

@@ -7,12 +7,10 @@ module.exports = (sequelize, DataTypes) => {
     phone_number: DataTypes.STRING,
     pictures: DataTypes.STRING,
     bio: DataTypes.TEXT
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
   });
+
+  Users.associate = function (models) {
+    Users.hasMany(models.Itinerary);  
+  };
   return Users;
 };
