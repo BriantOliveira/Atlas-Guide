@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 3000
 /****************************************************
  *  Check for login token on every request
  ***************************************************/
-let verifyAuthentication = (req, res, next)=>{
+let verifyAuthentication = (req, res, next) => {
     if (typeof req.cookies.userToken === 'undefined' || req.cookies.userToken === null) {
       req.user = null;
     } else {

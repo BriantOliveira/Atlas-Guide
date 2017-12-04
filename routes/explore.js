@@ -3,7 +3,7 @@
  *      Your Source for travel itineraries
  *      Explore Router File
  ******************************************/
-var models = require('../db/models');
+var models = require('../models');
 
 module.exports = function(app) {
 
@@ -15,6 +15,12 @@ module.exports = function(app) {
                 }
             }
         }).then((venues) => {
+            res.json({ msg: 'This is working' });
+        })
+    });
+
+    app.get('/:id', function(req, res, next) {
+        models.venues.findById(req.params.id).then(venues => {
             res.json({ msg: 'This is working' });
         })
     });
