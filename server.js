@@ -1,6 +1,6 @@
-/*******************************************
+ /*******************************************
  *  Atlas Guide
- *      Your Source for excellent travel 
+ *      Your Source for excellent travel
  *  v. 1.0.0 Beta
  ******************************************/
 require('dotenv').config()
@@ -23,7 +23,7 @@ let verifyAuthentication = (req, res, next)=>{
       req.user = null;
     } else {
       var token = req.cookies.userToken;
-      
+
       //Synchronous verification
       try{
         decodedToken = jwt.verify(token, process.env.SECRETKEY)
@@ -31,7 +31,7 @@ let verifyAuthentication = (req, res, next)=>{
         req.user = decodedToken._id
       }catch(err){
         console.log(err.message)
-      }   
+      }
     }
     next()
   }
