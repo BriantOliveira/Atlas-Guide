@@ -9,8 +9,4 @@ module.exports = function (app) {
         res.render('index');
     });
 
-    //Routes
-    require('./signup')(app);
-    require('./login')(app);
-
 };

@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
     var Event = sequelize.define('Event', {
-        
+
         eventName: DataTypes.STRING,
         happensOn: DataTypes.DATEONLY, // happensOn - startsAt
         startsAt: DataTypes.DATE, //startsAt
@@ -26,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
 // JS variables camelCase
 // Association id columns need an index?
 // OOP classmethod initilization
+
 // Separate vendor code from your code - add through bower
 // remove extra files/folders
 // Order of front end assets so your code extends vendor code (not the other way around)

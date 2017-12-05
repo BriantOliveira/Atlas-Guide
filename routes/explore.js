@@ -3,6 +3,7 @@
  *      Your Source for travel itineraries
  *      Explore Router File
  ******************************************/
+
 var models = require('../models');
 
 module.exports = function(app) {
@@ -11,7 +12,7 @@ module.exports = function(app) {
         models.venues.findAll({
             where: {
                 name: {
-                    %like: "%" + req.query.term + "%"
+                    like: "%" + req.query.term + "%"
                 }
             }
         }).then((venues) => {
