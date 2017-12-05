@@ -7,13 +7,8 @@
 
  module.exports = function(app) {
     app.get('/login', function(req, res, next) {
-        models.User.findAll().then((Users) => {
-            res.json({msg: 'This is the login page'});
-            res.status(200)
-            //res.render('profile', { Users: Users})
-        })
-
-    });
+            res.render('login')
+        });
     //Login validation
     app.post('login', function (req, res, next) {
         User.findOne({ username: req.body.username }, "+password", function(err, User) {

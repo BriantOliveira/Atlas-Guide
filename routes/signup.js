@@ -8,7 +8,6 @@ var models = require('../models');
  module.exports = function(app){
      //SINGUP
      app.get('/signup', function (req, res) {
-         console.log(models.Users);
          res.render('signup');
      });
 
