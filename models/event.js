@@ -1,22 +1,23 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-    var Events = sequelize.define('Events', {
-        event_name: DataTypes.STRING,
-        date: DataTypes.DATEONLY, // happensOn - startsAt
-        start_time: DataTypes.DATE, //startsAt
-        end_time: DataTypes.DATE,
-        google_id: DataTypes.STRING,
+    var Event = sequelize.define('Event', {
+        
+        eventName: DataTypes.STRING,
+        happensOn: DataTypes.DATEONLY, // happensOn - startsAt
+        startsAt: DataTypes.DATE, //startsAt
+        endsAt: DataTypes.DATE,
+        googleId: DataTypes.STRING,
         lat: DataTypes.DECIMAL,
         long: DataTypes.DECIMAL,
         address: DataTypes.STRING,
-        event_type: DataTypes.STRING
+        eventType: DataTypes.STRING
     });
 
-    Events.associate = function (models) {
-
+    Event.associate = function (models) {
+        Event.belongsTo(models.Venue);
     };
 
-    return Events;
+    return Event;
 }
 
 

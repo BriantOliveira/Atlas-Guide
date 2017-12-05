@@ -1,16 +1,17 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var Users = sequelize.define('Users', {
-    first_name: DataTypes.STRING,
-    last_name: DataTypes.STRING,
-    email: DataTypes.STRING,
-    phone_number: DataTypes.STRING,
+  var User = sequelize.define('User', {
+      
+    first: {type: DataTypes.STRING, allowNull: false},
+    last: {type: DataTypes.STRING, allowNull: false},
+    email: {type: DataTypes.STRING, unique: true, allowNull: false},
+    phoneNumber: DataTypes.STRING,
     pictures: DataTypes.STRING,
     bio: DataTypes.TEXT
   });
 
-  Users.associate = function (models) {
-    Users.hasMany(models.Itinerary);  
+  User.associate = function (models) {
+    User.hasMany(models.Itinerary);
   };
-  return Users;
+  return User;
 };
