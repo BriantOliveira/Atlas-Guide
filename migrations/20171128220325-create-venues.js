@@ -1,23 +1,23 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Venues', {
+    return queryInterface.createTable('Venue', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      venue_name: {
+      venueName: {
         type: Sequelize.STRING
       },
-      open_hours: {
+      openAt: {
         type: Sequelize.DATE
       },
-      close_hours: {
+      closeAt: {
         type: Sequelize.DATE
       },
-      google_id: {
+      googleId: {
         type: Sequelize.STRING
       },
       lat: {
@@ -29,7 +29,7 @@ module.exports = {
       address: {
         type: Sequelize.STRING
       },
-      venue_type: {
+      venueType: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -43,6 +43,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Venues');
+    return queryInterface.dropTable('Venue');
   }
 };

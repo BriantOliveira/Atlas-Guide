@@ -1,26 +1,26 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Events', {
+    return queryInterface.createTable('Event', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      event_name: {
+      eventName: {
         type: Sequelize.STRING
       },
-      date: {
+      happensOn: {
         type: Sequelize.DATEONLY
       },
-      start_time: {
+      startsAt: {
         type: Sequelize.DATE
       },
-      end_time: {
+      endsAt: {
         type: Sequelize.DATE
       },
-      google_id: {
+      googleId: {
         type: Sequelize.STRING
       },
       lat: {
@@ -32,7 +32,7 @@ module.exports = {
       address: {
         type: Sequelize.STRING
       },
-      event_type: {
+      eventType: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -46,6 +46,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Events');
+    return queryInterface.dropTable('Event');
   }
 };
