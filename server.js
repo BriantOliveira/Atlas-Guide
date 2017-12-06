@@ -15,8 +15,6 @@ const path = require('path')
 //Instantiate express
 const app = express()
 
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
-
 const PORT = process.env.PORT || 3000
 
 /****************************************************
@@ -50,6 +48,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(verifyAuthentication)
 // Set up a static public directory
 app.use(express.static('./public'))
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 // Setup handlebars view engine and pass in parameters
 app.engine('hbs', hbs({defaultLayout: 'main', extname: 'hbs'}))
 app.set('view engine', 'hbs')
