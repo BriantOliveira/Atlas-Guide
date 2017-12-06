@@ -7,13 +7,17 @@
     "dialect": "postgres"
   },
   "test": {
-    "username": "briantoliveira",
+    "username": "root",
     "password": null,
     "database": "atlasguideme",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
+    "username": "root",
+    "password": null,
+    "database": "atlasguideme",
+    "host": "127.0.0.1",
     "dialect": "postgres"
   }
 }

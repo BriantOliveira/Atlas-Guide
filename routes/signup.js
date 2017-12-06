@@ -8,13 +8,14 @@ var models = require('../models');
  module.exports = function(app){
      //SINGUP
      app.get('/signup', function (req, res) {
-         res.render('signup');
+         res.render('signup', {});
      });
 
-     app.post('/signup', function (req, res) {
-         console.log(models);
-        models.Users.create(req.body).then(function(user) {
-            res.redirect('/')
+     app.post('/', function (req, res) {
+        models.User.create(req.body).then((user) => {
+            console.log(User)
+            console(req.body)
+            res.render('/', { user: user })
         });
      });
  };

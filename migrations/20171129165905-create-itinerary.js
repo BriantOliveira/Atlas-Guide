@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Itinerary', {
+    return queryInterface.createTable('Itineraries', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -11,13 +11,13 @@ module.exports = {
       eventId: {
         type: Sequelize.STRING
       },
-      userId: {
-        type: Sequelize.INTEGER
-      },
       venueId: {
         type: Sequelize.INTEGER
       },
       userPhoneNumber: {
+        type: Sequelize.STRING
+      },
+      CityName: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -31,6 +31,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Itinerary');
+    return queryInterface.dropTable('Itineraries');
   }
 };

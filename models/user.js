@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   User.associate = function (models) {
-    User.hasMany(models.Itinerary);
+    //User.hasMany(models.Itinerary);
   };
   return User;
 };
