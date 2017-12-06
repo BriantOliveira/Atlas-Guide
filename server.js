@@ -7,12 +7,14 @@ require('dotenv').config()
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const express = require('express')
-var favicon = require('serve-favicon')
+const favicon = require('serve-favicon')
 const hbs = require('express-handlebars')
 const jwt = require('jsonwebtoken')
 
 //Instantiate express
 const app = express()
+
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 const PORT = process.env.PORT || 3000
 
