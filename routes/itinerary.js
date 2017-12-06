@@ -8,17 +8,17 @@
  module.exports = function(app) {
 
 
-     app.get('/search', function (req, res) {
-         models.Itinerary.findAll({
-             where: {
-                //  Cityname: {
-                //      like: "%" + req.query.term + "%"
-                //  }
-             }
-         }).then((itinerary) => {
-             res.json({ msg: 'intinery working' });
-         });
-     });
+    //  app.get('/search', function (req, res) {
+    //      models.Itinerary.findAll({
+    //          where: {
+    //             //  Cityname: {
+    //             //      like: "%" + req.query.term + "%"
+    //             //  }
+    //          }
+    //      }).then((itinerary) => {
+    //          res.json({ msg: 'intinery working' });
+    //      });
+    //  });
 
     app.get('/new', function (req, res, next) {
         res.send("test")
