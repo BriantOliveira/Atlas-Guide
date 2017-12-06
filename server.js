@@ -1,4 +1,4 @@
- /*******************************************
+/*******************************************
  *  Atlas Guide
  *      Your Source for excellent travel
  *  v. 1.0.0 Beta
@@ -16,6 +16,18 @@ const path = require('path')
 const app = express()
 
 const PORT = process.env.PORT || 3000
+
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize('atlasguideme', 'briantoliveira', null, { dialect: 'postgres' });
+
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
 
 /****************************************************
  *  Check for login token on every request
