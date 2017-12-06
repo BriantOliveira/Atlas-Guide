@@ -17,8 +17,12 @@ const app = express()
 
 const PORT = process.env.PORT || 3000
 
+/****************************************************
+ *  SQL Connection
+ ***************************************************/
+
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('atlasguideme', 'briantoliveira', null, { dialect: 'postgres' });
+const sequelize = new Sequelize('atlasguideme', 'briantoliveira', null, { dialect: 'postgres', logging: false });
 
 sequelize
   .authenticate()
@@ -57,7 +61,7 @@ let verifyAuthentication = (req, res, next) => {
 
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({extended: true}))
-app.use(verifyAuthentication)
+// app.use(verifyAuthentication)
 // Set up a static public directory
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 // Setup handlebars view engine and pass in parameters
