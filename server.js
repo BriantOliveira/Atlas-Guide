@@ -53,10 +53,8 @@ app.set('view engine', 'hbs')
 
 // Load Routes
 require('./routes/router.js')(app)
-//Routes
 require('./routes/signup.js')(app);
-require('./routes/login.js')(app);
-//require('./routes/itinerary.js')(app);
+require('./routes/itinerary.js')(app);
 require('./routes/explore.js')(app);
 
 // Add 404 Error page routing
