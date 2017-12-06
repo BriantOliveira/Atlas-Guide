@@ -28,6 +28,6 @@ _book/
 book.pdf
 book.epub
 book.mobi
-
+package-lock.json
 #Exclude postgres database settings
 server/config/config.json
