@@ -11,9 +11,9 @@
      app.get('/search', function (req, res) {
          models.Itinerary.findAll({
              where: {
-                 name: {
-                     like: "%" + req.query.term + "%"
-                 }
+                //  Cityname: {
+                //      like: "%" + req.query.term + "%"
+                //  }
              }
          }).then((itinerary) => {
              res.json({ msg: 'intinery working' });
