@@ -10,6 +10,7 @@ const express = require('express')
 const favicon = require('serve-favicon')
 const hbs = require('express-handlebars')
 const jwt = require('jsonwebtoken')
+const path = require('path')
 
 //Instantiate express
 const app = express()
