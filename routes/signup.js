@@ -30,7 +30,6 @@ let User= require('../models/user')
          res.render('login');
      });
 
-
      app.post('/login', function(req, res, next) {
         User.findOne({ username: req.body.username }, "+password", function (err, user) {
         if (!user) { return res.status(401).send({ message: 'Wrong username or password' }) };
