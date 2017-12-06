@@ -5,6 +5,7 @@
  ******************************************/
 var models = require('../models');
 var jwt = require('jsonwebtoken')
+let User= require('../models/user')
 
  module.exports = function(app){
 
