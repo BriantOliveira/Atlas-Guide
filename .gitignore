@@ -29,5 +29,8 @@ book.pdf
 book.epub
 book.mobi
 package-lock.json
+.idea
+node_modules
+.DS_Store
 #Exclude postgres database settings
 server/config/config.json
