@@ -3,9 +3,10 @@
  *      Your Source for travel itineraries
  *      Signup Router File
  ******************************************/
-var models = require('../models');
-var jwt = require('jsonwebtoken')
-let User= require('../models/user')
+let models = require('../models')
+let jwt = require('jsonwebtoken')
+let User = require('../models/user')
+let bcrypt = require('bcrypt')
 
  module.exports = function(app){
 
@@ -30,24 +31,25 @@ let User= require('../models/user')
          res.render('login');
      });
 
-     app.post('/login', function(req, res, next) {
-        User.findOne({ username: req.body.username }, "+password", function (err, user) {
-        if (!user) { return res.status(401).send({ message: 'Wrong username or password' }) };
-        user.comparePassword(req.body.password, function (err, isMatch) {
-            if (!isMatch) {
-                return res.status(401).send({ message: 'Wrong Username or password' });
-            }
 
-            var token = jwt.sign({ _id: user._id }, process.env.SECRETKEY, { expiresIn: "60 days" });
-            res.cookie('nToken', token, { maxAge: 900000, httpOnly: true });
+    app.post('/login', (req, res) => {
+     var userToFind = req.body.username;
+     models.User.findOne({ where: {email: userToFind } }).then(function(user) {
+       bcrypt.compare(req.body.password, user.password, function(err, isMatch) {
+         if (isMatch) {
+           var token = jwt.sign({ id: user.id }, process.env.SECRETKEY, { expiresIn: "60 days" });
+           res.cookie('nToken', token, { maxAge: 900000, httpOnly: true });
+           res.status(200).send({message: "Successfully logged in"});
+           console.log("Logged in!")
+         } else {
+           return res.status(401).send({ message: 'Wrong username or password' });
+         }
+       })
+     })
+ });
 
-            res.render('login')
-      });
-    }).catch(function(err) {
-      if(err){
-          console.log(err)
-      }
-    })
-  });
-
- };
+ // LOGOUT
+ app.get('/logout', function(req, res) {
+   res.clearCookie('nToken');
+ });
+};
