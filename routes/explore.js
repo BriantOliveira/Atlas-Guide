@@ -28,7 +28,7 @@ module.exports = function(app) {
 
     });
 
-    app.get('/:id', function(req, res, next) {
+    app.get('/guest/:id', function(req, res, next) {
         models.venues.findById(req.params.id).then(venues => {
             res.json({ msg: 'This is working' });
         })

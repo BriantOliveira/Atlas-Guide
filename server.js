@@ -3,17 +3,20 @@
  *      Your Source for excellent travel
  *  v. 1.0.0 Beta
  ******************************************/
-require('dotenv').config();
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const express = require('express');
-const favicon = require('serve-favicon');
-const hbs = require('express-handlebars');
-const jwt = require('jsonwebtoken');
-const path = require('path');
-const app = express();
+require('dotenv').config()
+const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
+const express = require('express')
+const favicon = require('serve-favicon')
+const hbs = require('express-handlebars')
+const jwt = require('jsonwebtoken')
+var bcrypt = require('bcrypt')
+const path = require('path')
 
-const PORT = process.env.PORT || 3000;
+//Instantiate express
+const app = express()
+
+const PORT = process.env.PORT || 3000
 
 /****************************************************
  *  SQL Connection
