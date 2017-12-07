@@ -8,8 +8,39 @@ This application requires the following environment variables to be set on the s
 - DBUSER: This is the username that the db runs under
 - PORT (optional):  Defaults to Port 3000 
 
+
+add a file named ``` /config/config.json ```
+add the following object substituting YOURUSERNAME for the username for the server
+
+```
+{
+  "development": {
+    "username": "YOURUSERNAME",
+    "password": null,
+    "database": "atlasguideme",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "atlasguideme",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "atlasguideme",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
+```
+
 Update /server/cofig/config.json with the proper username for the database.
 
 ## Todo
 Setup twilio to text users upcoming events
 Add events from http://www.sftravel.com and www.sftourismtips.com
+add install 
