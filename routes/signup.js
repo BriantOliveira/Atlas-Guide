@@ -5,7 +5,6 @@
  ******************************************/
 let models = require('../models')
 let jwt = require('jsonwebtoken')
-let User = require('../models/user')
 let bcrypt = require('bcrypt')
 
  module.exports = function(app){

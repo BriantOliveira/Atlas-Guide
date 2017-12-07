@@ -6,18 +6,26 @@
 
 var models = require('../models');
 
+const getVenues = function(options){
+
+}
+
 module.exports = function(app) {
 
     app.get('/search', function(req, res, next) {
-        models.venues.findAll({
-            where: {
-                name: {
-                    like: "%" + req.query.term + "%"
-                }
-            }
-        }).then((venues) => {
-            res.json({ msg: 'This is working' });
-        })
+
+        // models.venues.findAll({
+        //     where: {
+        //         name: {
+        //             like: "%" + req.query.term + "%"
+        //         }
+        //     }
+        // }).then((venues) => {
+        //     res.json({ msg: 'This is working' });
+        // })
+
+        res.render('builditinerary');
+
     });
 
     app.get('/:id', function(req, res, next) {
@@ -25,4 +33,6 @@ module.exports = function(app) {
             res.json({ msg: 'This is working' });
         })
     });
+
 };
+

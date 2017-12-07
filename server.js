@@ -23,7 +23,7 @@ const PORT = process.env.PORT || 3000
  ***************************************************/
 
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('atlasguideme', 'briantoliveira', null, { dialect: 'postgres', logging: false });
+const sequelize = new Sequelize('atlasguideme', process.env.DBUSER, null, { dialect: 'postgres', logging: false });
 
 sequelize
   .authenticate()
@@ -45,33 +45,31 @@ let verifyAuthentication = (req, res, next) => {
 
       //Synchronous verification
       try{
-        decodedToken = jwt.verify(token, process.env.SECRETKEY)
-        console.log("***Authenticate***")
-        req.user = decodedToken._id
+        decodedToken = jwt.verify(token, process.env.SECRETKEY);
+        console.log("***Authenticate***");
+        req.user = decodedToken._id;
       }catch(err){
-        console.log(err.message)
-      }
-    }
-    next()
-  }
+        console.log(err.message);
+      };
+    };
+    next();
+  };
 
 
 /****************************************************
  *  Add Middlewarez
  ***************************************************/
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
-app.use(cookieParser())
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({extended: true}));
 // app.use(verifyAuthentication)
-// Set up a static public directory
 
 // Setup handlebars view engine and pass in parameters
-app.engine('hbs', hbs({defaultLayout: 'main', extname: 'hbs'}))
-app.set('view engine', 'hbs')
-
+app.engine('hbs', hbs({defaultLayout: 'main', extname: 'hbs'}));
+app.set('view engine', 'hbs');
 
 // Load Routes
-require('./routes/router.js')(app)
+require('./routes/router.js')(app);
 require('./routes/signup.js')(app);
 require('./routes/itinerary.js')(app);
 require('./routes/explore.js')(app);
@@ -88,11 +86,10 @@ require('./routes/explore.js')(app);
 
 //     //do logging and user-friendly error message display
 //     res.redirect('/404.html');
-//   }
+//   };
 // });
 
-
-// Listen on port
+// Listen on port number
 app.listen(PORT, function () {
     console.log('Atlas listening on port', PORT);
 });
