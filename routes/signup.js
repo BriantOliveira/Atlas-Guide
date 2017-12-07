@@ -3,14 +3,13 @@
  *      Your Source for travel itineraries
  *      Signup Router File
  ******************************************/
-let models = require('../models')
-let jwt = require('jsonwebtoken')
-let bcrypt = require('bcrypt')
-
+var models = require('../models');
+var jwt = require('jsonwebtoken');
+var bcrypt = require('bcrypt');
  module.exports = function(app){
 
 
-     //SINGUP
+     //SIGNUP
      app.get('/signup', function (req, res) {
          res.render('signup', {});
      });
