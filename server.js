@@ -67,26 +67,29 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.engine('hbs', hbs({defaultLayout: 'main', extname: 'hbs'}));
 app.set('view engine', 'hbs');
 
+// Set up a static public directory
+app.use(express.static('./public'))
 // Load Routes
 require('./routes/router.js')(app);
 require('./routes/signup.js')(app);
 require('./routes/itinerary.js')(app);
 require('./routes/explore.js')(app);
 
-// // Add 404 Error page routing
-// app.use(function (req, res, next) {
-//   var err = new Error('Not Found');
-//   err.status = 404;
-//   next(err);
-// });
-// //Redirect to 404 page
-// app.use(function (err, req, res, next) {
-//   if (err.status == 404) {
+// Add 404 Error page routing
+app.use(function (req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
 
-//     //do logging and user-friendly error message display
-//     res.redirect('/404.html');
-//   };
-// });
+//Redirect to 404 page
+app.use(function (err, req, res, next) {
+  if (err.status == 404) {
+
+    //do logging and user-friendly error message display
+    res.redirect('/404.html');
+  };
+});
 
 // Listen on port number
 app.listen(PORT, function () {
