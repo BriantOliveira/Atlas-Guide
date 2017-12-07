@@ -10,7 +10,11 @@ var bcrypt = require('bcrypt');
 
  module.exports = function(app){
 
-     //SIGNUP
+     /****************************************************
+      *  SIGNUP ROUTES
+      ***************************************************/
+
+
      app.get('/signup', function (req, res) {
          res.render('signup', {});
      });
@@ -27,18 +31,23 @@ var bcrypt = require('bcrypt');
             password: hash
         };
          models.User.create(newUser, {w:1}, function(err) {
-             res.redirect('/');
-             //return res.status(200).send({ message: 'Created user' });
+             res.status(200).redirect('/')
          })
         })
       });
     });
 
+
+    /****************************************************
+     *  LOGIN ROUTES
+     ***************************************************/
+
+
      app.get('/login', function(req, res) {
          res.render('login');
      });
 
-
+// Compares if password given is correct in the database
     app.post('/login', (req, res) => {
          models.User.findOne({
                  email: req.body.email}).then(function(data) {
@@ -54,8 +63,11 @@ var bcrypt = require('bcrypt');
     });
 });
 
+/****************************************************
+ *  LOGOUT ROUTE
+ ***************************************************/
 
- // LOGOUT
+
  app.get('/logout', function(req, res) {
    res.clearCookie('nToken');
  });
