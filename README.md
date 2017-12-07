@@ -9,8 +9,8 @@ This application requires the following environment variables to be set on the s
 - PORT (optional):  Defaults to Port 3000 
 
 
-add a file named ``` /config/config.json ```
-add the following object substituting YOURUSERNAME for the username for the server
+Create a file named ``` /config/config.json ``` and the following object 
+substituting YOURUSERNAME for the username for the server.
 
 ```
 {
