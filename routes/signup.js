@@ -16,24 +16,25 @@ let bcrypt = require('bcrypt')
          res.render('signup', {});
      });
 
-     app.post('/signup', function (req, res) {
-         bcrypt.genSalt(10, (err, salt) => {
-             bcrypt.hash(req.body.password, salt, (err, hash) => {
-                 var newUser = {
-                     email: req.body.email,
-                     password: hash
-                 }
-             })
-         })
-        models.User.create(req.body).then((user) => {
-            res.redirect('/')
-        }).catch(function(err) {
-            if(err){
-                console.log(err);
-            }
-        })
-     });
-
+     app.post('/signup', (req, res) => {
+    // hash the password
+    bcrypt.genSalt(10, (err, salt) => {
+      bcrypt.hash(req.body.password, salt, (err, hash) => {
+        console.log("hash " + hash);
+          var newUser = {
+            email: req.body.email,
+            password: hash
+          }
+          models.User.create(newUser).then((user) => {
+          return res.status(200).send({ message: 'Created user' });
+        }).catch((err) => {
+          if (err) {
+            res.json(err);
+          }
+        });
+      });
+    });
+  });
 
      app.get('/login', function(req, res) {
          res.render('login');
@@ -41,15 +42,17 @@ let bcrypt = require('bcrypt')
 
 
     app.post('/login', (req, res) => {
-     var userToFind = req.body.username;
-     models.User.findOne({ where: {email: userToFind } }).then(function(user) {
+     var userToFind = req.body.email;
+     models.User.findOne({email: userToFind }).then(function(user) {
        bcrypt.compare(req.body.password, user.password, function(err, isMatch) {
          if (isMatch) {
            var token = jwt.sign({ id: user.id }, process.env.SECRETKEY, { expiresIn: "60 days" });
            res.cookie('nToken', token, { maxAge: 900000, httpOnly: true });
            res.status(200).send({message: "Successfully logged in"});
            console.log("Logged in!")
+
          } else {
+             console.log(err)
            return res.status(401).send({ message: 'Wrong username or password' });
          }
        })
