@@ -5,12 +5,11 @@
  ******************************************/
 var models = require('../models');
 var jwt = require('jsonwebtoken')
-let User= require('../models/user')
 
  module.exports = function(app){
 
 
-     //SINGUP
+     //SIGNUP
      app.get('/signup', function (req, res) {
          res.render('signup', {});
      });
@@ -25,13 +24,12 @@ let User= require('../models/user')
         })
      });
 
-
      app.get('/login', function(req, res) {
          res.render('login');
      });
 
      app.post('/login', function(req, res, next) {
-        User.findOne({ username: req.body.username }, "+password", function (err, user) {
+        models.User.findOne({ username: req.body.username }, "+password", function (err, user) {
         if (!user) { return res.status(401).send({ message: 'Wrong username or password' }) };
         user.comparePassword(req.body.password, function (err, isMatch) {
             if (!isMatch) {
