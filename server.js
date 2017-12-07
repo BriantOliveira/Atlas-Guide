@@ -11,7 +11,6 @@ const favicon = require('serve-favicon');
 const hbs = require('express-handlebars');
 const jwt = require('jsonwebtoken');
 const path = require('path');
-
 //Instantiate express
 const app = express();
 
@@ -22,7 +21,7 @@ const PORT = process.env.PORT || 3000;
  ***************************************************/
 
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('atlasguideme', 'briantoliveira', null, { dialect: 'postgres', logging: false });
+const sequelize = new Sequelize('atlasguideme', process.env.DBUSER, null, { dialect: 'postgres', logging: false });
 
 sequelize
   .authenticate()
@@ -75,23 +74,23 @@ require('./routes/signup.js')(app);
 require('./routes/itinerary.js')(app);
 require('./routes/explore.js')(app);
 
-// Add 404 Error page routing
-app.use(function (req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
-//Redirect to 404 page
-app.use(function (err, req, res, next) {
-  if (err.status == 404) {
+// // Add 404 Error page routing
+// app.use(function (req, res, next) {
+//   var err = new Error('Not Found');
+//   err.status = 404;
+//   next(err);
+// });
+// //Redirect to 404 page
+// app.use(function (err, req, res, next) {
+//   if (err.status == 404) {
 
-    //do logging and user-friendly error message display
-    res.redirect('/404.html');
-  };
-});
+//     //do logging and user-friendly error message display
+//     res.redirect('/404.html');
+//   };
+// });
 
 
-// Listen on port
-app.listen(PORT, function () {
-    console.log('Atlas listening on port', PORT);
-});
+// // Listen on port
+// app.listen(PORT, function () {
+//     console.log('Atlas listening on port', PORT);
+// });
