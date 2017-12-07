@@ -7,6 +7,9 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
+      <div id="map"><p>Loading Map...</p><i class="fa fa-spin fa-refresh" aria-hidden="true"></i></div>
+    </div>
+    <div class="col-sm-4">
       <h3>Column 1</h3>
       <p>Lorem ipsum dolor..</p>
       <p>Ut enim ad..</p>
@@ -23,3 +26,24 @@
     </div>
   </div>
 </div> 
+
+    <script>
+      var map;
+      navigator.geolocation.getCurrentPosition((position)=>{
+            console.log(position.coords.latitude)
+            console.log(position.coords.longitude)
+            charge(position.coords.latitude, position.coords.longitude)
+            
+      })
+
+      function charge(curlat, curlong) {
+
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: curlat, lng: curlong},
+          zoom: 15
+        });
+      }
+
+    </script>
+    <script src="{{mapLocation}}"
+    async defer></script>

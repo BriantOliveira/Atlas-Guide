@@ -1,5 +1,30 @@
 *{
-    padding: 0px;
-    margin: 0px;
     font-family: Helvetica;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    background-color: #ddd;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+#map>p{
+    width: 100%;
+    text-align: center;
+    padding: 0px;
+    margin-bottom: -80px;
+    margin-top: -20px;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }

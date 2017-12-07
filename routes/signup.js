@@ -4,10 +4,11 @@
  *      Signup Router File
  ******************************************/
 var models = require('../models');
+
 var jwt = require('jsonwebtoken');
 var bcrypt = require('bcrypt');
- module.exports = function(app){
 
+ module.exports = function(app){
 
      //SIGNUP
      app.get('/signup', function (req, res) {
