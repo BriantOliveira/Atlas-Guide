@@ -17,6 +17,14 @@ let bcrypt = require('bcrypt')
      });
 
      app.post('/signup', function (req, res) {
+         bcrypt.genSalt(10, (err, salt) => {
+             bcrypt.hash(req.body.password, salt, (err, hash) => {
+                 var newUser = {
+                     email: req.body.email,
+                     password: hash
+                 }
+             })
+         })
         models.User.create(req.body).then((user) => {
             res.redirect('/')
         }).catch(function(err) {
