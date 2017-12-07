@@ -9,8 +9,7 @@ var jwt = require('jsonwebtoken');
 var bcrypt = require('bcrypt');
 
  module.exports = function(app){
-
-
+ 
      //SIGNUP
      app.get('/signup', function (req, res) {
          res.render('signup', {});
@@ -44,16 +43,18 @@ var bcrypt = require('bcrypt');
     app.post('/login', (req, res) => {
      var userToFind = req.body.email;
      models.User.findOne({email: userToFind }).then(function(user) {
+        //console.log("User:", user)
        bcrypt.compare(req.body.password, user.password, function(err, isMatch) {
          if (isMatch) {
+            console.log("Bcrypt match:", isMatch)
            var token = jwt.sign({ id: user.id }, process.env.SECRETKEY, { expiresIn: "60 days" });
            res.cookie('nToken', token, { maxAge: 900000, httpOnly: true });
            res.status(200).send({message: "Successfully logged in"});
            console.log("Logged in!")
 
          } else {
-             console.log(err)
-           return res.status(401).send({ message: 'Wrong username or password' });
+             console.log("error object:", err)
+           return res.status(401).send({ message: err });
          }
        })
      })

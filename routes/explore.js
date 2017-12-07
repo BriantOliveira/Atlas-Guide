@@ -3,7 +3,6 @@
  *      Your Source for travel itineraries
  *      Explore Router File
  ******************************************/
-
 var models = require('../models');
 
 const getVenues = function(options){
