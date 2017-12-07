@@ -11,7 +11,6 @@ const favicon = require('serve-favicon');
 const hbs = require('express-handlebars');
 const jwt = require('jsonwebtoken');
 const path = require('path');
-//Instantiate express
 const app = express();
 
 const PORT = process.env.PORT || 3000;
@@ -61,12 +60,10 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: true}));
 // app.use(verifyAuthentication)
-// Set up a static public directory
 
 // Setup handlebars view engine and pass in parameters
 app.engine('hbs', hbs({defaultLayout: 'main', extname: 'hbs'}));
 app.set('view engine', 'hbs');
-
 
 // Load Routes
 require('./routes/router.js')(app);
@@ -89,8 +86,7 @@ require('./routes/explore.js')(app);
 //   };
 // });
 
-
-// Listen on port
+// Listen on port number
 app.listen(PORT, function () {
     console.log('Atlas listening on port', PORT);
 });
