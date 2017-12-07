@@ -90,7 +90,7 @@ require('./routes/explore.js')(app);
 // });
 
 
-// // Listen on port
-// app.listen(PORT, function () {
-//     console.log('Atlas listening on port', PORT);
-// });
+// Listen on port
+app.listen(PORT, function () {
+    console.log('Atlas listening on port', PORT);
+});
