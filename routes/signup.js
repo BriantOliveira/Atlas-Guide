@@ -20,19 +20,17 @@ var bcrypt = require('bcrypt');
       bcrypt.hash(req.body.password, salt, (err, hash) => {
         console.log("hash " + hash);
           var newUser = {
+            first: req.body.first,
+            last: req.body.last,
             email: req.body.email,
             password: hash
-          }
-          models.User.create(newUser).then((user) => {
-          return res.status(200).send({ message: 'Created user' });
-        }).catch((err) => {
-          if (err) {
-            res.json(err);
-          }
-        });
+        };
+         models.User.create(newUser, {w:1}, function(err) {
+             return res.status(200).send({ message: 'Created user' });
+         })
+        })
       });
     });
-  });
 
      app.get('/login', function(req, res) {
          res.render('login');
