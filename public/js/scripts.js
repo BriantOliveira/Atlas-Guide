@@ -4,3 +4,15 @@ $(function() {
     $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
   });
 });
+
+$(document).ready(function(){
+    $(window).scroll(function(){
+        if($(window).scrollTop() > $(window).height()){
+            $(".nav-down").css({"background-color":"#FFFFFF"});
+        }
+        else{
+            $(".navbar").css({"background-color":"transparent"});
+        }
+
+    })
+})

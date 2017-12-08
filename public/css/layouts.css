@@ -27,10 +27,21 @@ html, body {
   height: 100%;
   width: 100%;
 }
-
+/* NAVBAR */
 .house {
     height: 28px;
     weight: 28px;
+}
+.nav-link {
+    color: 	#000000;
+    font-weight: bold;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 1px;
+    font-size: 17px;
+}
+.navbar {
+    position: fixed;
+
 }
 
 @mixin transition($settings) {
