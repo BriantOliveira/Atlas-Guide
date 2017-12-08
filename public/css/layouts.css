@@ -28,6 +28,11 @@ html, body {
   width: 100%;
 }
 
+.house {
+    height: 28px;
+    weight: 28px;
+}
+
 @mixin transition($settings) {
   -webkit-transition: $settings;
   -moz-transition: $settings;
