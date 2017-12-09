@@ -4,6 +4,8 @@
  *      Itinerary Router File
  ******************************************/
  var models = require('../models');
+ const fetch = require("node-fetch")
+ 
 
  module.exports = function(app) {
 
@@ -29,28 +31,26 @@
     })
 
     app.get('/search/:venueType/:city', function(req, res){
-        venueType = req.params.venue
+        venueType = req.params.venueType
         city = req.params.city
         query = venueType + "+in+" + city
         let gglurl = "https://maps.googleapis.com/maps/api/place/textsearch/json?query="+query+"&key="+process.env.GKEY
 
-        console.log("googling it for you")
+        console.log("googling for you:", gglurl)
         fetch(gglurl).then((googleresults)=>{
-            console.log("fetching...")
             return googleresults.json()
         }).then((json)=>{
-
+          console.log(json)
            res.send(json)
         //    console.log(Object.keys(json.results))
-           json.results.forEach((result)=>{
-               console.log(result.name)
-           })
+           //json.results.forEach((result)=>{
+           //     console.log(result.name)
+           // })
 
            console.log("status:", json.status)
         }).catch((err)=>{
-            console.log(err.message)
+          console.log("fetch error:", err.message)
         })
-
     })
 
 };

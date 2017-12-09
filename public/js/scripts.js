@@ -83,6 +83,7 @@ $("body").on("submit", function(e){
     city = document.getElementById('city').value.replace(" ", "+");
     venue = document.getElementById('venue').value;
     //$("div").animate({left: '250px'});
+    console.log('/search/'+venue+'/'+city)
     jQuery.ajax({
         type: "GET",
         url: '/search/'+venue+'/'+city
