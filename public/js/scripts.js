@@ -1,4 +1,24 @@
 
+// $(function() {
+//   $('a[href*=#]').on('click', function(e) {
+//     e.preventDefault();
+//     $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
+//   });
+// });
+
+$(document).ready(function(){
+    $(window).scroll(function(){
+        if($(window).scrollTop() > $(window).height()){
+            $(".nav-down").css({"background-color":"#E6C274"});
+        }
+        else{
+            $(".navbar").css({"background-color":"transparent"});
+        }
+
+    })
+})
+
+
 function doSomething(e) {
     jQuery( "#results" ).toggle()
 
@@ -6,13 +26,13 @@ function doSomething(e) {
     // city = document.getElementById('city').value.replace(" ", "+");
     // venue = document.getElementById('venue').value;
     
-    // jQuery.ajax({
-    //     type: "GET",
-    //     url: '/search/'+venue+'/'+city,
+    jQuery.ajax({
+        type: "GET",
+        url: '/search/'+venue+'/'+city,
 
-    // }).done(function(data){
-    //     alert(data)
-    // })
+    }).done(function(data){
+        
+    })
     // $.get( '/search/'+venue+'/'+city, function(data){
     //     alert(data)
     // } )
@@ -59,18 +79,16 @@ function doSomething(e) {
 
 $("body").on("submit", function(e){
     e.preventDefault();
-    gkey = document.getElementById('gkey').value;
+    //gkey = document.getElementById('gkey').value;
     city = document.getElementById('city').value.replace(" ", "+");
     venue = document.getElementById('venue').value;
-    $("div").animate({left: '250px'});
+    //$("div").animate({left: '250px'});
     jQuery.ajax({
         type: "GET",
-        url: '/search/'+venue+'/'+city,
+        url: '/search/'+venue+'/'+city
 
     }).done(function(data){
-        alert(data)
+        console.log("Data:", data)
+       
     })
-
-    
 });
-

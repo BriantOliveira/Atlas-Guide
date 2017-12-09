@@ -28,31 +28,29 @@
         }
     })
 
-    app.get('/search/:venue/:city', function(req, res){
-        venue = req.params.venue
+    app.get('/search/:venueType/:city', function(req, res){
+        venueType = req.params.venue
         city = req.params.city
-        res.send(city)
+        query = venueType + "+in+" + city
+        let gglurl = "https://maps.googleapis.com/maps/api/place/textsearch/json?query="+query+"&key="+process.env.GKEY
 
+        console.log("googling it for you")
+        fetch(gglurl).then((googleresults)=>{
+            console.log("fetching...")
+            return googleresults.json()
+        }).then((json)=>{
 
-        // let gglurl = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+San+Francisco&key="+process.env.GKEY
-        // let placeAPIStart = "https://maps.googleapis.com/maps/api/place/"
-        // let googlesearch = placeAPIStart + ""
-        // console.log("googling it for you")
-        // let test = "http://www.google.com"
-        // fetch(googlesearch).then((googleresults)=>{
-        //     return googleresults.json()
-        // }).then((json)=>{
+           res.send(json)
+        //    console.log(Object.keys(json.results))
+           json.results.forEach((result)=>{
+               console.log(result.name)
+           })
 
-        //    res.send(json)
-        // //    console.log(Object.keys(json.results))
-        //    json.results.forEach((result)=>{
-        //        console.log(result.name)
-        //    })
+           console.log("status:", json.status)
+        }).catch((err)=>{
+            console.log(err.message)
+        })
 
-        //    console.log("status:", json.status)
-        // }).catch((err)=>{
-        //     console.log(err.message)
-        // })
     })
 
 };
