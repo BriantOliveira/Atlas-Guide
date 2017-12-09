@@ -23,7 +23,7 @@ $("body").on("submit", function(e){
     //gkey = document.getElementById('gkey').value;
     city = document.getElementById('city').value.replace(" ", "+");
     venue = document.getElementById('venue').value;
-    
+    console.log("help")
     //console.log('/search/'+venue+'/'+city);
     jQuery.ajax({
         type: "GET",
@@ -38,6 +38,10 @@ $("body").on("submit", function(e){
         })
     });
 });
+
+function createReturnList(objArray){
+
+}
 
 function createHTMLTable(doubleAry){
     var table = document.createElement('table');
