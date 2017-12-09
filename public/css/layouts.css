@@ -9,6 +9,7 @@ html, body {
 }
 
 #map {
+    min-height: 300px;
     height: 100%;
     width: 100%;
     color: #fff;
@@ -166,10 +167,10 @@ h2 {
     height: auto;
 
 }
-#results{
+/* #results{
   height: 100vh;
   
-}
+} */
 
 #map>i{
     font-size: 55px;
