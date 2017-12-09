@@ -38,10 +38,19 @@ html, body {
     font-family: 'Roboto Condensed', sans-serif;
     letter-spacing: 1px;
     font-size: 17px;
+    max-width: 100%;
+    height: auto;
 }
 .navbar {
     position: fixed;
+    background: rgba(255, 255, 255, 0.3);
+    max-width: 100%;
+    height: auto;
+}
 
+.collapse navbar-collapse {
+    max-width: 100%;
+    height: auto;
 }
 
 @mixin transition($settings) {
@@ -57,12 +66,16 @@ html, body {
 
 .logo {
     position: relative;
+    max-width: 100%;
+    height: auto;
 }
 
 .arrow {
     height: 64px;
     weight: 64px;
     position: absolute;
+    max-width: 100%;
+    height: auto;
     background: url(https://www.nxworld.net/example/css-scroll-down-button/bg05.jpg) center center / cover no-repeat;
 }
 .demo a {
@@ -78,9 +91,12 @@ html, body {
   letter-spacing: .1em;
   text-decoration: none;
   transition: opacity .3s;
+
 }
 #arrow a {
   padding-top: 70px;
+  max-width: 100%;
+  height: auto;
 }
 
 #arrow a span {
@@ -125,6 +141,31 @@ html, body {
   }
 }
 
+h1 {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    -webkit-font-smoothing: antialiased;
+    height: 23px;
+    margin-top: 4px;
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+
+}
+h2 {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    -webkit-font-smoothing: antialiased;
+    height: 23px;
+    margin-top: 4px;
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+
+}
+
 /* padded section */
 .pad-section {
   padding: 50px 0;
@@ -138,21 +179,17 @@ html, body {
   text-align: center;
   vertical-align: middle;
 }
-.text-vcenter h1 {
-  font-size: 4.5em;
-  font-weight: 700;
-  margin: 0;
-  padding: 0;
-}
+
 /* additional sections */
 #services {
-  background-color: #EFEFEF;
-  color: #ffffff;
+  background-color: #FFFFFF;
+  color: #000000;
 }
 #services .glyphicon {
   border: 2px solid #FFFFFF;
   border-radius: 50%;
   display: inline-block;
+  font-family: 'PT Sans', sans-serif;
   font-size: 60px;
   height: 140px;
   line-height: 140px;
@@ -160,35 +197,31 @@ html, body {
   vertical-align: middle;
   width: 140px;
 }
+
+h4, p {
+    font-family: 'PT Sans', sans-serif;
+    margin-top: 24px;
+}
+
 #services .icons {
     height: 140px;
     width: 140px;
 }
+.footer-bar {
+    position: static;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding-top: 19px;
+    padding-bottom: 10px;
+}
 
-#information {
-  background: url(../images/estate.jpg) no-repeat center center fixed;
-  display: table;
-  height: 800px;
-  position: relative;
-  width: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+@media not (max-width: 639px) {
+/* CSS rules for any device that is wider than 639 pixels */
 }
-#information .panel {
-  opacity: 0.85;
-}
-#google_map {
-  height: 500px;
-}
-footer {
-  padding: 20px 0;
-}
-footer .glyphicon {
-  color: #333333;
-  font-size: 60px;
-}
-footer .glyphicon:hover {
-  color: #306d9f;
+@media only screen and (max-width: 480px) {
+  /* ... */
 }
