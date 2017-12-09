@@ -2,6 +2,12 @@
     font-family: Helvetica;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 #map {
     height: 100%;
     width: 100%;
@@ -22,11 +28,6 @@
     margin-top: -20px;
 }
 
-/* Optional: Makes the sample page fill the window. */
-html, body {
-  height: 100%;
-  width: 100%;
-}
 /* NAVBAR */
 .house {
     height: 28px;
@@ -217,11 +218,4 @@ h4, p {
     text-align: center;
     padding-top: 19px;
     padding-bottom: 10px;
-}
-
-@media not (max-width: 639px) {
-/* CSS rules for any device that is wider than 639 pixels */
-}
-@media only screen and (max-width: 480px) {
-  /* ... */
 }
