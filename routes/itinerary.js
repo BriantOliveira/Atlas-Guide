@@ -36,18 +36,14 @@
         query = venueType + "+in+" + city
         let gglurl = "https://maps.googleapis.com/maps/api/place/textsearch/json?query="+query+"&key="+process.env.GKEY
 
-        console.log("googling for you:", gglurl)
+        //console.log("googling for you:", gglurl)
         fetch(gglurl).then((googleresults)=>{
             return googleresults.json()
         }).then((json)=>{
-          console.log(json)
+          //console.log(json)
            res.send(json)
-        //    console.log(Object.keys(json.results))
-           //json.results.forEach((result)=>{
-           //     console.log(result.name)
-           // })
 
-           console.log("status:", json.status)
+           console.log("Connection status:", json.status)
         }).catch((err)=>{
           console.log("fetch error:", err.message)
         })

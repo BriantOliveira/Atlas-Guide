@@ -83,13 +83,30 @@ $("body").on("submit", function(e){
     city = document.getElementById('city').value.replace(" ", "+");
     venue = document.getElementById('venue').value;
     //$("div").animate({left: '250px'});
-    console.log('/search/'+venue+'/'+city)
+    console.log('/search/'+venue+'/'+city);
     jQuery.ajax({
         type: "GET",
         url: '/search/'+venue+'/'+city
 
     }).done(function(data){
-        console.log("Data:", data)
+        console.log("Data:", data);
        
-    })
+    });
 });
+
+function createHTMLTable(doubleAry){
+    var table = document.createElement('table');
+    var tableBody = document.createElement('tbody');
+    
+    doubleAry.forEach((givenRow)=> {
+        var newRow = document.createElement('tr');
+        givenRow.forEach((givenCell)=>{
+            var newCell = document.createElement('td');
+            newCell.appendChild(document.createTextNode(givenCell));
+            newRow.appendChild(newCell);
+        });
+        tableBody.appendChild(newRow);
+        table.appendChild(tableBody);
+    });
+    return table;
+}
