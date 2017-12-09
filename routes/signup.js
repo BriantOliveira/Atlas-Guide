@@ -20,23 +20,25 @@ var bcrypt = require('bcrypt');
      });
 
      app.post('/signup', (req, res) => {
-    // hash the password
-    bcrypt.genSalt(10, (err, salt) => {
-      bcrypt.hash(req.body.password, salt, (err, hash) => {
-        console.log("hash " + hash);
-          var newUser = {
-            first: req.body.first,
-            last: req.body.last,
-            email: req.body.email,
-            password: hash
-        };
-         models.User.create(newUser, {w:1}, function(err) {
-             res.status(200).redirect('/')
-         })
-        })
-      });
+        console.log("Kittens")
+        // hash the password
+        bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(req.body.password, salt, (err, hash) => {
+            console.log("hash " + hash);
+            var newUser = {
+                first: req.body.first,
+                last: req.body.last,
+                email: req.body.email,
+                password: hash
+            };
+            models.User.create(newUser, {w:1}).then((savedUser)=>{
+                console.log(savedUser.null)
+            }).catch((err)=>{
+                console.log(err.message)
+            })
+            })
+        });
     });
-
 
     /****************************************************
      *  LOGIN ROUTES
@@ -51,6 +53,7 @@ var bcrypt = require('bcrypt');
     app.post('/login', (req, res) => {
          models.User.findOne({
                  email: req.body.email}).then(function(data) {
+                    aconsole.log(data.id)
            bcrypt.compare(req.body.password, data.password, function(err, result) {
                 if(err) {
                      res.status(400)

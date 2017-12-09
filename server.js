@@ -61,7 +61,7 @@ let verifyAuthentication = (req, res, next) => {
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: true}));
-// app.use(verifyAuthentication)
+app.use(verifyAuthentication)
 
 // Setup handlebars view engine and pass in parameters
 app.engine('hbs', hbs({defaultLayout: 'main', extname: 'hbs'}));
