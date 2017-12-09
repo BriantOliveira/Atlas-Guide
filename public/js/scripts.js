@@ -23,7 +23,7 @@ $("body").on("submit", function(e){
     //gkey = document.getElementById('gkey').value;
     city = document.getElementById('city').value.replace(" ", "+");
     venue = document.getElementById('venue').value;
-    console.log("help")
+    
     //console.log('/search/'+venue+'/'+city);
     jQuery.ajax({
         type: "GET",
@@ -32,7 +32,7 @@ $("body").on("submit", function(e){
         scraped = []
         console.log("Data:", data);
         data.results.forEach((rowObject)=>{
-            newRow = [rowObject.name, rowObject.]
+            newRow = [rowObject.name, rowObject.formatted_address]
             scraped.push(rowObject.name)
             
         })
