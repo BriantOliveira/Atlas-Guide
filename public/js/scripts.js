@@ -6,6 +6,27 @@
 //   });
 // });
 
+// function searchInCity(){
+//     e.preventDefault();
+//     //gkey = document.getElementById('gkey').value;
+//     city = document.getElementById('city').value.replace(" ", "+");
+//     venue = document.getElementById('venue').value;
+    
+//     //console.log('/search/'+venue+'/'+city);
+//     jQuery.ajax({
+//         type: "GET",
+//         url: '/search/'+venue+'/'+city
+//     }).done(function(data){
+//         scraped = []
+//         console.log("Data:", data);
+//         data.results.forEach((rowObject)=>{
+//             newRow = [rowObject.name, rowObject.formatted_address]
+//             scraped.push(rowObject.name)
+            
+//         })
+//     });
+// }
+
 $(document).ready(function(){
     $(window).scroll(function(){
         if($(window).scrollTop() > $(window).height()){
@@ -17,9 +38,7 @@ $(document).ready(function(){
 
     })
 })
-
-$("body").on("submit", function(e){
-    e.preventDefault();
+function searchInCity(){
     //gkey = document.getElementById('gkey').value;
     city = document.getElementById('city').value.replace(" ", "+");
     venue = document.getElementById('venue').value;
@@ -37,11 +56,14 @@ $("body").on("submit", function(e){
             
         })
     });
-});
-
-function createReturnList(objArray){
-
 }
+
+// //Prevent page reload on form submit;
+// $("body").on("submit", function(e){
+//     e.preventDefault();  
+// });
+
+
 
 function createHTMLTable(doubleAry){
     var table = document.createElement('table');

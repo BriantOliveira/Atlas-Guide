@@ -16,6 +16,7 @@ var bcrypt = require('bcrypt');
 
 
      app.get('/signup', function (req, res) {
+         console.log("Signups")
          res.render('signup', {});
      });
 
