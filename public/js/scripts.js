@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-// $(function() {
-//   $('a[href*=#]').on('click', function(e) {
-//     e.preventDefault();
-//     $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
-//   });
-// });
 
 $(document).ready(function(){
     $(window).scroll(function(){
@@ -17,14 +10,13 @@ $(document).ready(function(){
 
     })
 })
-=======
 
 function doSomething(e) {
     jQuery( ".hidden" ).toggle()
     // gkey = document.getElementById('gkey').value;
     // city = document.getElementById('city').value.replace(" ", "+");
     // venue = document.getElementById('venue').value;
-    
+
     // jQuery.ajax({
     //     type: "GET",
     //     url: '/search/'+venue+'/'+city,
@@ -59,8 +51,8 @@ function doSomething(e) {
     // city.replace(" ", "+")
     // let placeAPIStart = "https://maps.googleapis.com/maps/api/place/"
     // let googlesearch = placeAPIStart + "?query="+venue+"+in+"+ city.replace(" ", "+") +"&key="+gkey
-    
-    
+
+
     // fetch(googlesearch).then((googleresults)=>{
     //     return googleresults.json()
     // }).then((json)=>{
@@ -90,7 +82,5 @@ $("body").on("submit", function(e){
         alert(data)
     })
 
-    
-});
 
->>>>>>> 71ab5a2423719d70247794002eecf9e81c135a38
+});

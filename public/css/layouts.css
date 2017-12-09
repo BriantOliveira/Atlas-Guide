@@ -208,6 +208,85 @@ h4, p {
     height: 140px;
     width: 140px;
 }
+
+h6, p {
+    font-family: 'PT Sans', sans-serif;
+    margin-top: 24px;
+    text-align: center;
+}
+.features-5 .info {
+    color: #FFFFFF;
+}
+
+.info {
+    padding: 30px 0 30px;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.features-5 .container {
+    border-top: 0;
+    border-left: 0;
+
+}
+
+
+#icon > i{
+    width: 270px;
+    height: 71px;
+
+    box-sizing: inherit;
+}
+
+.nc-bus-front-12::before{
+    font-size: 45px;
+}
+
+.nc-time-alarm::before {
+    font-size: 45px;
+}
+
+.nc-pin-3::before {
+    font-size: 45px;
+}
+
+.nc-globe {
+    font-size: 45px;
+}
+
+.nc-icon {
+
+    font-size: 45px;
+}
+
+#glix {
+    top: 50px;
+    margin-bottom: 60px;
+}
+
+#lav {
+    top: 134px;
+}
+
+@media (min-width: 768px)
+.offset-md-1 {
+    margin-left: 8.333333%;
+}
+
+@media (min-width: 576px)
+.col-sm-5 {
+    -webkit-box-flex: 0;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+}
+.nc-icon ::before {
+    display: inline-block;
+    font: normal normal normal 14px/1 'nucleo-icons';
+    font-size: inherit;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+}
 .footer-bar {
     position: static;
     left: 0;
