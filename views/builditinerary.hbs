@@ -1,28 +1,46 @@
 
 <div class="jumbotron text-center">
-  <h1>My First Bootstrap Page</h1>
-  <p>Resize this responsive page to see the effect!</p>
+  <h1>Create Travel Itinerary</h1>
+  
 </div>
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-4 full-size">
       <div id="map"><p>Loading Map...</p><i class="fa fa-spin fa-refresh" aria-hidden="true"></i></div>
     </div>
-    <div class="col-sm-4">
-      <h3>Column 1</h3>
-      <p>Lorem ipsum dolor..</p>
-      <p>Ut enim ad..</p>
+    
+    <div class="col-sm-5 full-size">
+     <form onsubmit="return doSomething();">
+       <input id="gkey" name="prodId" type="hidden" value={{gkey}}>
+       <input id="gmapkey" name="prodId" type="hidden" value={{gmapkey}}>
+      <label for="city">City:</label>
+      
+      <input type="text" class="form-control" id="city">
+      
+      <select name="mydropdown" id="venue">
+      <option value="bars">Bars</option>
+      <option value="museums">Museums</option>
+      <option value="restaurants">Restaurants</option>
+      <option value="tours">Tours</option>
+      <option value="museums">Museums</option>
+      <option value="parks">Parks</option>
+
+      </select>
+        <br/>
+       <button type="submit" class="btn btn-primary">Find</button>
+     </form>
     </div>
-    <div class="col-sm-4">
-      <h3>Column 2</h3>
-      <p>Lorem ipsum dolor..</p>
-      <p>Ut enim ad..</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 3</h3>
-      <p>Lorem ipsum dolor..</p>
-      <p>Ut enim ad..</p>
+    <div class="col-sm-6 results clearfix">
+      <table class="table-striped">
+        <tr><th>Venue</th><th>Address</th></tr>
+        <tr><td>Slow Jam</td><td>800 North Point St</td></tr>
+        <tr><td>Boulevard Restaurant</td><td>1 Mission St</td></tr>
+        <tr><td>Nopa</td><td>560 Divisadero St</td></tr>
+        <tr><td>Burma Superstar</td><td>309 Clement St</td></tr>
+        <tr><td>Kokkari Estiatorio</td><td>200 Jackson St</td></tr>
+
+      </table>
     </div>
   </div>
 </div> 

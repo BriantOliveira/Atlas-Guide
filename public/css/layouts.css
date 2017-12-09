@@ -2,6 +2,13 @@
     font-family: Helvetica;
 }
 
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 #map {
     height: 100%;
     width: 100%;
@@ -22,9 +29,16 @@
     margin-top: -20px;
 }
 
-/* Optional: Makes the sample page fill the window. */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+
+.full-size{
+    min-height: 500px;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+results{
+    float: right;
+
 }
