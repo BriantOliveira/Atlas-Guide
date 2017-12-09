@@ -8,7 +8,7 @@
  module.exports = function(app) {
 
     app.get('/itinerary/new', function (req, res, next) {
-        res.render("builditinerary",  {mapLocation: 'https://maps.googleapis.com/maps/api/js?key='+process.env.GMAPKEY+'&callback=initMap', gkey:process.env.GKEY, gmapkey: process.env.GMAPKEY});
+        res.render("builditinerary",  {mapLocation: 'https://maps.googleapis.com/maps/api/js?key='+process.env.GMAPKEY+'&callback=initMap', gmapkey: process.env.GMAPKEY});
         });
 
     app.post('/itinerary', function(req, res, next) {

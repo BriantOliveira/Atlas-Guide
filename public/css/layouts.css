@@ -34,9 +34,11 @@ html, body {
     min-height: 500px;
 }
 
-
+#map>i{
+    font-size: 55px;
+}
 
 #results{
-    float: right;
-    visibility: hidden;
+
+    
 }
