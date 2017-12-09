@@ -34,11 +34,9 @@ html, body {
     min-height: 500px;
 }
 
-.hidden{
-    visibility: hidden;
-}
 
-results{
+
+#results{
     float: right;
-
+    visibility: hidden;
 }

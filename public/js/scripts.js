@@ -1,6 +1,6 @@
 
 function doSomething(e) {
-    $( ".hidden" ).toggle()
+    jQuery( ".hidden" ).toggle()
     // gkey = document.getElementById('gkey').value;
     // city = document.getElementById('city').value.replace(" ", "+");
     // venue = document.getElementById('venue').value;
