@@ -61,7 +61,9 @@ const auth = require('../auth.js');
                      res.status(400)
                      console.log(err)
                 } else {
-                    res.redirect('/')
+                    //Set authentication cookie
+                    auth.setUserIDCookie(data, res);
+                    res.redirect('/trips')
                 }
             });
     });
