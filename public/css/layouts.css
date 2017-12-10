@@ -55,17 +55,10 @@ html, body {
     height: auto;
 }
 
-@mixin transition($settings) {
-  -webkit-transition: $settings;
-  -moz-transition: $settings;
-  -ms-transition: $settings;
-  -o-transition: $settings;
-  transition: $settings;
-}
 .container {
     position: relative;
 }
-
+/* FIRST SECTION */
 .logo {
     position: relative;
     max-width: 100%;
@@ -169,8 +162,10 @@ h2 {
 }
 /* #results{
   height: 100vh;
-  
+
 } */
+
+/* MAP */
 
 #map>i{
     font-size: 55px;
@@ -190,7 +185,7 @@ h2 {
   vertical-align: middle;
 }
 
-/* additional sections */
+/* SECOND SECTION */
 #services {
   background-color: #FFFFFF;
   color: #000000;
@@ -223,6 +218,8 @@ h6, p {
     margin-top: 24px;
     text-align: center;
 }
+/* THIRD SECTION */
+
 .features-5 .info {
     color: #FFFFFF;
 }
@@ -237,10 +234,6 @@ h6, p {
     border-top: 0;
     border-left: 0;
 
-}
-
-.btn-link {
-    color: #000000;
 }
 
 #icon > i{
@@ -270,6 +263,7 @@ h6, p {
     font-size: 45px;
 }
 
+/* FORTH SECTION */
 #glix {
     top: 50px;
     margin-bottom: 60px;
@@ -327,6 +321,13 @@ img {
     text-transform: none;
     -webkit-font-smoothing: antialiased;
 }
+
+.info {
+    height: 275px;
+}
+
+/* FOOTER */
+
 .footer-bar {
     position: static;
     left: 0;
@@ -338,4 +339,35 @@ img {
     padding-top: 19px;
     padding-bottom: 10px;
 
+}
+
+/* LOGIN */
+
+.login {
+    background-image: url('https://static.pexels.com/photos/380283/pexels-photo-380283.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: table;
+    height: 1000px;
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#box {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.card.card-register {
+    background-color: #000000;
+    border-radius: 8px;
+    color: #fff;
+    max-width: 350px;
+    margin: 20px 0 70px;
+    min-height: 400px;
+    padding: 30px;
 }
