@@ -457,5 +457,63 @@ img {
 }
 
 #register {
+    font-family: 'PT Sans', sans-serif;
     background-color: green;
+    color: #fff;
+}
+
+.card-title {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.or {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.link {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.btn-facebook {
+    border-radius: 50%;
+     border-style: solid;
+     border-width: 2px;
+      height: 40px;
+      width: 40px;
+      padding: 8px;
+      color: #0B67E7;
+      background-color: transparent;
+      border-color: #fff;
+}
+
+.btn-google {
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    height: 40px;
+    width: 40px;
+    padding: 8px ;
+    color: #3cba54;
+    background-color: transparent;
+    border-color: #fff;
+}
+
+.btn-twitter {
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    color: deepskyblue;
+    background-color: transparent;
+    border-color: #fff;
+    height: 40px;
+    width: 40px;
+    padding: 8px;
+}
+.social {
+    width: 134px;
+    margin-left: 81px;
+}
+
+input {
+    margin-top: 10px;
 }
