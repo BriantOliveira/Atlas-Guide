@@ -72,6 +72,7 @@ const auth = require('../auth.js');
  *  LOGOUT ROUTE
  ***************************************************/
  app.get('/logout', function(req, res) {
-   res.clearCookie('nToken');
+   res.clearCookie('jwtToken');
+   res.redirect('/')
  });
 };
