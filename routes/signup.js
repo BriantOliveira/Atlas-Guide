@@ -52,20 +52,27 @@ const auth = require('../auth.js');
 
     // Compares if password given is correct in the database
     app.post('/login', (req, res) => {
-         models.User.findOne({
-                 email: req.body.email}).then(function(data) {
-                    console.log(data.id)
-                    console.log("passwd", data.password)
-                    console.log("submitted passwd", req.body.password)
+        console.log("email", req.body.email)
+         models.User.findOne({where:{email: req.body.email}}).then(function(data) {
+                    // console.log("Returned Data", data)
+                    //  console.log("db email", data.email)
+                    //  console.log("DB User Password", data.password)
+                    //  console.log("client email", req.body.email)
+                    // console.log("client submitted passwd", req.body.password)
            bcrypt.compare(req.body.password, data.password, function(err, result) {
                 if(err) {
                      res.status(400)
                      console.log(err)
-                } else {
+                } 
+                if(result){
                     //Set authentication cookie
+                    console.log("resulting result", result)
                     auth.setUserIDCookie(data, res);
                     res.redirect('/trips')
+                }else{
+                    console.log('wrong username or password')
                 }
+
             });
     });
 });
