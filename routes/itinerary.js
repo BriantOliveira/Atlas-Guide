@@ -5,32 +5,34 @@
  ******************************************/
  var models = require('../models');
  const fetch = require("node-fetch")
- 
-
+ let verifyUserLoggedIn = (req, res)=>{
+    if(!req.user){
+        res.redirect("/login");
+    };
+   
+};
  module.exports = function(app) {
 
-    app.get('/itinerary/new', function (req, res, next) {
+    app.get('/itinerary/new', function (req, res) {
+        verifyUserLoggedIn(req, res);
         res.render("builditinerary",  {mapLocation: 'https://maps.googleapis.com/maps/api/js?key='+process.env.GMAPKEY+'&callback=initMap', gmapkey: process.env.GMAPKEY});
         });
 
     app.post('/itinerary', function(req, res, next) {
+
         models.Itinerary.create(req.body).then((itinerary) => {
             res.send('this is all itinerary');
         })
     });
 
     app.get('/navs', function(req, res){
+
         res.render('testmap', {mapLocation: 'https://maps.googleapis.com/maps/api/js?key='+process.env.GMAPKEY})
     })
 
-
-    app.get('/search', function(req, res){
-        jsonObj = {
-
-        }
-    })
-
     app.get('/search/:venueType/:city', function(req, res){
+
+
         venueType = req.params.venueType
         city = req.params.city
         query = venueType + "+in+" + city

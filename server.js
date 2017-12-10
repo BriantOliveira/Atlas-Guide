@@ -55,6 +55,13 @@ let verifyAuthentication = (req, res, next) => {
     next();
   };
 
+let verifyUserLoggedIn = (req, res)=>{
+    if(!req.user){
+        res.redirect("/");
+    };
+    next();
+};
+
 /****************************************************
  *  Add Middlewarez
  ***************************************************/
@@ -90,6 +97,7 @@ app.use(function (err, req, res, next) {
 
     //do logging and user-friendly error message display
     res.redirect('/404.html');
+
   };
 });
 
