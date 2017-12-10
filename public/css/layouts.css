@@ -55,13 +55,6 @@ html, body {
     height: auto;
 }
 
-@mixin transition($settings) {
-  -webkit-transition: $settings;
-  -moz-transition: $settings;
-  -ms-transition: $settings;
-  -o-transition: $settings;
-  transition: $settings;
-}
 .container {
     position: relative;
 }
@@ -167,10 +160,6 @@ h2 {
     height: auto;
 
 }
-/* #results{
-  height: 100vh;
-  
-} */
 
 #map>i{
     font-size: 55px;
@@ -195,6 +184,7 @@ h2 {
   background-color: #FFFFFF;
   color: #000000;
 }
+
 #services .glyphicon {
   border: 2px solid #FFFFFF;
   border-radius: 50%;
@@ -279,7 +269,7 @@ h6, p {
     top: 134px;
 }
 .iphone-container img {
-    max-width: 100%
+    max-width: 100%;
     padding-top: 40px;
 }
 img {
