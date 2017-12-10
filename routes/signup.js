@@ -55,6 +55,8 @@ const auth = require('../auth.js');
          models.User.findOne({
                  email: req.body.email}).then(function(data) {
                     console.log(data.id)
+                    console.log("passwd", data.password)
+                    console.log("submitted passwd", req.body.password)
            bcrypt.compare(req.body.password, data.password, function(err, result) {
                 if(err) {
                      res.status(400)
