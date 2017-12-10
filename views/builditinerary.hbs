@@ -7,12 +7,12 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-4 full-size">
-      <div id="map"><p>Loading Map...</p><i class="fa fa-spin fa-refresh" aria-hidden="true"></i></div>
+      <div id="map"><p>Loading Map...</p><i class="fa fa-spin fa-th-large fa-refresh" aria-hidden="true"></i></div>
     </div>
     
     <div class="col-sm-5 full-size">
-     <form onsubmit="return doSomething();">
-       <input id="gkey" name="prodId" type="hidden" value={{gkey}}>
+     <form>
+       
        <input id="gmapkey" name="prodId" type="hidden" value={{gmapkey}}>
       <label for="city">City:</label>
       
@@ -28,7 +28,7 @@
 
       </select>
         <br/>
-       <button type="submit" class="btn btn-primary">Find</button>
+       <button type="button" class="btn btn-primary" onclick="return searchInCity();">Find</button>
      </form>
     </div>
     <div id="results" class="col-sm-6 results clearfix ">
@@ -39,7 +39,6 @@
         <tr><td>Nopa</td><td>560 Divisadero St</td></tr>
         <tr><td>Burma Superstar</td><td>309 Clement St</td></tr>
         <tr><td>Kokkari Estiatorio</td><td>200 Jackson St</td></tr>
-
       </table>
     </div>
   </div>

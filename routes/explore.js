@@ -11,19 +11,8 @@ const getVenues = function(options){
 
 module.exports = function(app) {
 
-    app.get('/search', function(req, res, next) {
-
-        // models.venues.findAll({
-        //     where: {
-        //         name: {
-        //             like: "%" + req.query.term + "%"
-        //         }
-        //     }
-        // }).then((venues) => {
-        //     res.json({ msg: 'This is working' });
-        // })
-
-        res.render('builditinerary');
+    app.get('/explore', function(req, res, next) {
+        res.send('Its working');
 
     });
 
@@ -34,4 +23,3 @@ module.exports = function(app) {
     });
 
 };
-

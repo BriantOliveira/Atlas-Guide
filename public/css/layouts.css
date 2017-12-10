@@ -9,6 +9,7 @@ html, body {
 }
 
 #map {
+    min-height: 300px;
     height: 100%;
     width: 100%;
     color: #fff;
@@ -165,6 +166,14 @@ h2 {
     max-width: 100%;
     height: auto;
 
+}
+/* #results{
+  height: 100vh;
+  
+} */
+
+#map>i{
+    font-size: 55px;
 }
 
 /* padded section */
@@ -328,4 +337,5 @@ img {
     text-align: center;
     padding-top: 19px;
     padding-bottom: 10px;
+
 }

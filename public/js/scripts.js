@@ -11,76 +11,36 @@ $(document).ready(function(){
     })
 })
 
-function doSomething(e) {
-    jQuery( ".hidden" ).toggle()
-    // gkey = document.getElementById('gkey').value;
-    // city = document.getElementById('city').value.replace(" ", "+");
-    // venue = document.getElementById('venue').value;
-
-    // jQuery.ajax({
-    //     type: "GET",
-    //     url: '/search/'+venue+'/'+city,
-
-    // }).done(function(data){
-    //     alert(data)
-    // })
-    // $.get( '/search/'+venue+'/'+city, function(data){
-    //     alert(data)
-    // } )
-
-    // jQuery.get( 'search/'+venue+'/'+city, function( data ) {
-    //     $( ".results" ).html( data );
-    //     alert( "Load was performed." );
-    //   });
-
-
-    // $.ajax({
-    //     type: 'GET',
-    //     url: '/search/'+venue+'/'+city,
-    //     success: (results)=>{
-    //         alert("results")
-    //         $('.results').data(results)
-    //     },
-    //     error: function (xhr, ajaxOptions, thrownError) { //Add these parameters to display the required response
-    //         //alert(xhr.status);
-    //         alert("Ajax error: ", ajaxOptions);
-    //     },
-    // })
-
-    // let gglurl = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+San+Francisco&key="+gkey
-    // city.replace(" ", "+")
-    // let placeAPIStart = "https://maps.googleapis.com/maps/api/place/"
-    // let googlesearch = placeAPIStart + "?query="+venue+"+in+"+ city.replace(" ", "+") +"&key="+gkey
-
-
-    // fetch(googlesearch).then((googleresults)=>{
-    //     return googleresults.json()
-    // }).then((json)=>{
-
-    //    json.results.forEach((result)=>{
-    //        console.log(result.name)
-    //    })
-
-    //    console.log("status:", json.status)
-    // }).catch((err)=>{
-    //     console.log(err.message)
-    // })
-    return false;
-}
-
-$("body").on("submit", function(e){
-    e.preventDefault();
-    gkey = document.getElementById('gkey').value;
+function searchInCity(){
     city = document.getElementById('city').value.replace(" ", "+");
     venue = document.getElementById('venue').value;
 
     jQuery.ajax({
         type: "GET",
-        url: '/search/'+venue+'/'+city,
-
+        url: '/search/'+venue+'/'+city
     }).done(function(data){
-        alert(data)
-    })
+        scraped = []
+        console.log("Data:", data);
+        data.results.forEach((rowObject)=>{
+            newRow = [rowObject.name, rowObject.formatted_address]
+            scraped.push(rowObject.name)
+        })
+    });
+}
 
+function createHTMLTable(doubleAry){
+    var table = document.createElement('table');
+    var tableBody = document.createElement('tbody');
 
-});
+    doubleAry.forEach((givenRow)=> {
+        var newRow = document.createElement('tr');
+        givenRow.forEach((givenCell)=>{
+            var newCell = document.createElement('td');
+            newCell.appendChild(document.createTextNode(givenCell));
+            newRow.appendChild(newCell);
+        });
+        tableBody.appendChild(newRow);
+        table.appendChild(tableBody);
+    });
+    return table;
+}
