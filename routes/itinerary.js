@@ -5,18 +5,16 @@
  ******************************************/
  var models = require('../models');
  const fetch = require("node-fetch")
- let verifyUserLoggedIn = (req, res)=>{
-    if(!req.user){
-        res.redirect("/login");
-    };
-   
-};
+
  module.exports = function(app) {
 
-    app.get('/itinerary/new', function (req, res) {
-        verifyUserLoggedIn(req, res);
+    app.get("/itinerary/new", (req, res)=>{
+        if(!req.user){
+            return res.redirect("/login")
+        };
+
         res.render("builditinerary",  {mapLocation: 'https://maps.googleapis.com/maps/api/js?key='+process.env.GMAPKEY+'&callback=initMap', gmapkey: process.env.GMAPKEY});
-        });
+    });
 
     app.post('/itinerary', function(req, res, next) {
 
@@ -51,4 +49,11 @@
         })
     })
 
+};
+
+let verifyUserLoggedIn = (req, res)=>{
+    if(!req.user){
+        res.redirect("/login");
+    };
+   
 };
