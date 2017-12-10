@@ -3,25 +3,25 @@
  *      Your Source for travel itineraries
  *      Signup Router File
  ******************************************/
-var models = require('../models');
+let models = require('../models');
 
-var jwt = require('jsonwebtoken');
-var bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+
+const auth = require('../auth.js');
 
  module.exports = function(app){
 
      /****************************************************
       *  SIGNUP ROUTES
       ***************************************************/
-
-
      app.get('/signup', function (req, res) {
          console.log("Signups")
          res.render('signup', {});
      });
 
      app.post('/signup', (req, res) => {
-        console.log("Kittens")
+        console.log("Kittens");
         // hash the password
         bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(req.body.password, salt, (err, hash) => {
@@ -33,9 +33,15 @@ var bcrypt = require('bcrypt');
                 password: hash
             };
             models.User.create(newUser, {w:1}).then((savedUser)=>{
-                console.log(savedUser.null)
+                //console.log(savedUser.dataValues.id)
+                //console.log(savedUser.first)
+                jwtToken = auth.createJWT(savedUser);
+                cookieOptions = auth.cookieOptions();
+                res.cookie('jwtToken', jwtToken, cookieOptions);
+                res.redirect('/trips')
+
             }).catch((err)=>{
-                console.log(err.message)
+                console.log("User Creation error:", err.message);
             })
             })
         });
@@ -44,17 +50,15 @@ var bcrypt = require('bcrypt');
     /****************************************************
      *  LOGIN ROUTES
      ***************************************************/
-
-
-     app.get('/login', function(req, res) {
+    app.get('/login', function(req, res) {
          res.render('login');
      });
 
-// Compares if password given is correct in the database
+    // Compares if password given is correct in the database
     app.post('/login', (req, res) => {
          models.User.findOne({
                  email: req.body.email}).then(function(data) {
-                    aconsole.log(data.id)
+                    console.log(data.id)
            bcrypt.compare(req.body.password, data.password, function(err, result) {
                 if(err) {
                      res.status(400)
@@ -70,8 +74,6 @@ var bcrypt = require('bcrypt');
 /****************************************************
  *  LOGOUT ROUTE
  ***************************************************/
-
-
  app.get('/logout', function(req, res) {
    res.clearCookie('nToken');
  });
