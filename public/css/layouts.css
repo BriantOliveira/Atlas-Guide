@@ -58,7 +58,7 @@ html, body {
 .container {
     position: relative;
 }
-
+/* FIRST SECTION */
 .logo {
     position: relative;
     max-width: 100%;
@@ -160,6 +160,15 @@ h2 {
     height: auto;
 
 }
+<<<<<<< HEAD
+/* #results{
+  height: 100vh;
+
+} */
+=======
+>>>>>>> 0a48adba43a64eb9c663ec61847df05928f7c557
+
+/* MAP */
 
 #map>i{
     font-size: 55px;
@@ -179,7 +188,7 @@ h2 {
   vertical-align: middle;
 }
 
-/* additional sections */
+/* SECOND SECTION */
 #services {
   background-color: #FFFFFF;
   color: #000000;
@@ -213,6 +222,8 @@ h6, p {
     margin-top: 24px;
     text-align: center;
 }
+/* THIRD SECTION */
+
 .features-5 .info {
     color: #FFFFFF;
 }
@@ -227,10 +238,6 @@ h6, p {
     border-top: 0;
     border-left: 0;
 
-}
-
-.btn-link {
-    color: #000000;
 }
 
 #icon > i{
@@ -260,6 +267,7 @@ h6, p {
     font-size: 45px;
 }
 
+/* FORTH SECTION */
 #glix {
     top: 50px;
     margin-bottom: 60px;
@@ -317,6 +325,13 @@ img {
     text-transform: none;
     -webkit-font-smoothing: antialiased;
 }
+
+.info {
+    height: 275px;
+}
+
+/* FOOTER */
+
 .footer-bar {
     position: static;
     left: 0;
@@ -328,4 +343,64 @@ img {
     padding-top: 19px;
     padding-bottom: 10px;
 
+}
+
+/* LOGIN */
+
+.login {
+    background-image: url('https://static.pexels.com/photos/692064/pexels-photo-692064.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: table;
+    height: 1100px;
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#box {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.card.card-register {
+    background-color: rgba(0, 0, 0, .7);
+    color: #fff;
+    border-radius: 10px;
+    max-width: 350px;
+    margin: 20px 0 70px;
+    min-height: 400px;
+    padding: 30px;
+    top: 232px;
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    border: 0px;
+}
+
+#forgot {
+    background-color: trasparent;
+    border-radius: 5px;
+    border: 0px;
+    margin-left: 60px;
+}
+
+.btn-link {
+    color: 	#708090	;
+
+}
+
+.back {
+    background-color: 	#B0C4DE	;
+    font-family: 'PT Sans', sans-serif;
 }
