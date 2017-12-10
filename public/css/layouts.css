@@ -230,11 +230,13 @@ h6, p {
 
 }
 
+.btn-link {
+    color: #000000;
+}
 
 #icon > i{
     width: 270px;
     height: 71px;
-
     box-sizing: inherit;
 }
 
@@ -266,6 +268,35 @@ h6, p {
 
 #lav {
     top: 134px;
+}
+.iphone-container img {
+    max-width: 100%
+    padding-top: 40px;
+}
+img {
+    vertical-align: middle;
+}
+
+.features-3 {
+    padding-top: 28px;
+}
+
+.phone {
+    width: 200px;
+    height: 576.969px;
+}
+
+.title {
+    text-align: center;
+}
+.nc-vectort::before {
+    font-size: 45px;
+    content: "\ea61";
+}
+
+.nc-icon{
+    width: 150px;
+    height: 52px;
 }
 
 @media (min-width: 768px)
