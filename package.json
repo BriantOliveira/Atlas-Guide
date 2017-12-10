@@ -21,6 +21,7 @@
     "nodemon": "^1.12.1"
   },
   "dependencies": {
+    "animate.css": "^3.5.2",
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",

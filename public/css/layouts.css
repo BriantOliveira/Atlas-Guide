@@ -160,13 +160,6 @@ h2 {
     height: auto;
 
 }
-<<<<<<< HEAD
-/* #results{
-  height: 100vh;
-
-} */
-=======
->>>>>>> 0a48adba43a64eb9c663ec61847df05928f7c557
 
 /* MAP */
 
@@ -396,11 +389,73 @@ img {
 }
 
 .btn-link {
-    color: 	#708090	;
+    color: 	#708090;
 
 }
 
 .back {
     background-color: 	#B0C4DE	;
     font-family: 'PT Sans', sans-serif;
+}
+
+/* SIGNUP */
+
+#signup {
+    background-image: url('/img/sf-view.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: table;
+    height: 1100px;
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+.intro {
+    color: #000;
+    height: 275px;
+    width: 469px;
+    padding-top: 192px;
+
+}
+
+#information {
+    text-align: center;
+}
+/* Icons */
+.fa-umbrella::before {
+    font-size: 45px;
+}
+
+.fa-map-signs {
+    font-size: 45px;
+}
+.fa-user-secret {
+    font-size: 45px;
+}
+.page3 {
+
+    box-sizing: inherit;
+    width: 263px;
+    height: 49px;
+    padding-left: 223px;
+}
+
+ #information > p {
+     font-size: 17px;
+ }
+
+#sf-view {
+    left: 400px;
+}
+
+#register {
+    background-color: green;
 }
