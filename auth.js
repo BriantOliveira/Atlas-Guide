@@ -11,3 +11,12 @@ exports.cookieOptions = function(){
     }
     return jsonObject
 }
+
+exports.setUserIDCookie = function(dbObject, resObject){
+    token = jwt.sign({ id: dbObject.dataValues.id }, process.env.SECRETKEY);
+    cookieOptions = {
+        maxAge: 1000000, 
+        httpOnly: true
+    };
+    resObject.cookie('jwtToken', token, cookieOptions);
+}

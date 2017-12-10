@@ -160,10 +160,13 @@ h2 {
     height: auto;
 
 }
+<<<<<<< HEAD
 /* #results{
   height: 100vh;
 
 } */
+=======
+>>>>>>> 0a48adba43a64eb9c663ec61847df05928f7c557
 
 /* MAP */
 
@@ -190,6 +193,7 @@ h2 {
   background-color: #FFFFFF;
   color: #000000;
 }
+
 #services .glyphicon {
   border: 2px solid #FFFFFF;
   border-radius: 50%;
@@ -273,7 +277,7 @@ h6, p {
     top: 134px;
 }
 .iphone-container img {
-    max-width: 100%
+    max-width: 100%;
     padding-top: 40px;
 }
 img {
