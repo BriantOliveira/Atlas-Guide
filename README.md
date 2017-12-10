@@ -42,3 +42,4 @@ substituting YOURUSERNAME for the username for the server.
 Setup twilio to text users upcoming events
 Add events from http://www.sftravel.com and www.sftourismtips.com
 add install 
+update signup page with descriptive error when new email already exists in database
