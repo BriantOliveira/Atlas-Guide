@@ -21,7 +21,6 @@ const auth = require('../auth.js');
      });
 
      app.post('/signup', (req, res) => {
-        console.log("Kittens");
         // hash the password
         bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(req.body.password, salt, (err, hash) => {
@@ -34,10 +33,8 @@ const auth = require('../auth.js');
             };
             models.User.create(newUser, {w:1}).then((savedUser)=>{
                 //console.log(savedUser.dataValues.id)
-                //console.log(savedUser.first)
-                jwtToken = auth.createJWT(savedUser);
-                cookieOptions = auth.cookieOptions();
-                res.cookie('jwtToken', jwtToken, cookieOptions);
+                console.log("saved", savedUser.first)
+                auth.setUserIDCookie(savedUser, res);
                 res.redirect('/trips')
 
             }).catch((err)=>{
@@ -67,7 +64,6 @@ const auth = require('../auth.js');
                     res.redirect('/')
                 }
             });
-
     });
 });
 
