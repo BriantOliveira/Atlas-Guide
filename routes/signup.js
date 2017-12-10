@@ -16,7 +16,6 @@ const auth = require('../auth.js');
       *  SIGNUP ROUTES
       ***************************************************/
      app.get('/signup', function (req, res) {
-         console.log("Signups")
          res.render('signup', {});
      });
 
