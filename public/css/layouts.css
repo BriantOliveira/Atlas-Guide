@@ -160,13 +160,6 @@ h2 {
     height: auto;
 
 }
-<<<<<<< HEAD
-/* #results{
-  height: 100vh;
-
-} */
-=======
->>>>>>> 0a48adba43a64eb9c663ec61847df05928f7c557
 
 /* MAP */
 
@@ -177,7 +170,7 @@ h2 {
 /* padded section */
 .pad-section {
   padding: 50px 0;
-}
+} 
 .pad-section img {
   width: 100%;
 }
