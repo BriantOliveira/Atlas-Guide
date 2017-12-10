@@ -1,7 +1,7 @@
 module.exports = function(app) {
     app.get("/trips", (req, res)=>{
         if(!req.user){
-            res.redirect("/")
+            return res.redirect("/login")
         }
         console.log(req.user)
         res.send("user id " + req.user)
