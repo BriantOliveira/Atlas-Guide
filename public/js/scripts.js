@@ -6,8 +6,8 @@ $(document).ready(function(){
         else{
             $(".navbar").css({"background-color":"transparent"});
         }
-    })
-})
+    });
+});
 
 function searchInCity(){
     city = document.getElementById('city').value.replace(" ", "+");
