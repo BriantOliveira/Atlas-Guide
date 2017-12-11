@@ -635,14 +635,8 @@ input {
     padding-top: 40px;
     padding-bottom: 40px;
     max-width: 440px;
-    margin: 0 auto;
-    text-align: center;
-    border-radius: 12px;
-    box-shadow: 0 6px -4px rgba(0, 0, 0, 0.15);
-    background-color: #fff;
-    color: #333333;
     margin-bottom: 20px;
-    border: 0 none;
+    text-align: center;
 }
 
 .card[data-background="image"] {
@@ -657,4 +651,22 @@ input {
     -o-transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
     -ms-transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
     transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
+}
+
+.card-places {
+    color: #000;
+}
+
+ .card-shadow[data-background="image"]:after {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.56);
+    border-radius: 12px;
+
 }
