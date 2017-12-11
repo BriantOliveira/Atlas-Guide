@@ -52,15 +52,12 @@ module.exports = function(app) {
                 returnedHTML = compiledTemplate({results:json.results})
                 res.send(returnedHTML);
             });
-           
-            
-            
 
            console.log("Connection status:", json.status);
         }).catch((err)=>{
           console.log("fetch error:", err.message);
-        })
-    })
+        });
+    });
 
 };
 

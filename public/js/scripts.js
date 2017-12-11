@@ -9,6 +9,8 @@ $(document).ready(function(){
     })
 })
 
+function updateMap(location)
+
 function searchInCity(){
     city = document.getElementById('city').value.replace(" ", "+");
     venue = document.getElementById('venue').value;
