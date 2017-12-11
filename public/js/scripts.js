@@ -20,8 +20,8 @@ function markMap(obj){
     // console.log(latlong)
     // console.log(name)
     // console.log(placeId)
-    console.log(parseFloat(latitude))
-    console.log(parseFloat(longitude))
+    // console.log(parseFloat(latitude))
+    // console.log(parseFloat(longitude))
     
     settings = {
         position: {lat:parseFloat(latitude), lng:parseFloat(longitude)},
