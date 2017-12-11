@@ -25,14 +25,14 @@ function markMap(obj){
     
     settings = {
         position: {lat:parseFloat(latitude), lng:parseFloat(longitude)},
-        title: "hello"
+        map: map,
+        title: name
     }
-    //addMapMarker(settings)
-    let marker = new google.maps.Marker(settings);
-    marker.setMap(map)
-    map.panTo({lat:parseFloat(latitude),lng:parseFloat(longitude)})
-    map.setZoom(15)
-    //mapMarkers.push(marker);
+    addMapMarker(settings)
+    // let marker = new google.maps.Marker(settings);
+    // map.panTo({lat:parseFloat(latitude),lng:parseFloat(longitude)})
+    // map.setZoom(15)
+
 
 }
 
@@ -56,11 +56,27 @@ function searchInCity(){
 /*************************
 *   Map Marker Functions
 **************************/
-const mapMarkers = Array()
+//const mapMarkers = Array()
+var mapMarker;
 
 function addMapMarker(settings){
-    let marker = new google.maps.Marker(settings);
-    mapMarkers.push(marker);
+    // let marker = new google.maps.Marker(settings);
+    // mapMarkers.push(marker);
+    if( mapMarker ){
+        deleteMapMarker();
+    }
+    
+    mapMarker = new google.maps.Marker(settings);
+
+    map.panTo(settings.position)
+    map.setZoom(15)
+
+
+}
+
+function deleteMapMarker(){
+    mapMarker.setMap(null)
+    mapMarker = null
 }
 
 function setAllMapMarkers(map){
