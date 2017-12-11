@@ -71,7 +71,6 @@ html, body {
     position: absolute;
     max-width: 100%;
     height: auto;
-    background: url(https://www.nxworld.net/example/css-scroll-down-button/bg05.jpg) center center / cover no-repeat;
 }
 .demo a {
   position: absolute;
@@ -516,4 +515,146 @@ img {
 
 input {
     margin-top: 10px;
+}
+
+/* EXPLORE */
+
+#explore {
+    background-image: url('https://static.pexels.com/photos/697244/pexels-photo-697244.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: table;
+    height: 910px;
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#world {
+    top: 547px;
+    left: auto
+    right: 5px;
+}
+
+.blog-4 {
+    margin-top:102px;
+}
+
+#sf {
+    border-radius: 12px;
+    weight: 540px;
+    height: 360px;
+}
+
+.btn-tr {
+    border-radius: 30px;
+    font-weight: 60px;
+}
+
+#advanture {
+    box-sizing: border-box;
+    border-width: 2px;
+    font-size: 12px;
+    font-weight: 700;
+    padding:  0.5rem 18px;
+    text-transform: uppercase;
+    font-family: 'PT Sans', sans-serif;
+}
+
+#drink {
+    border-radius: 12px;
+    weight: 540px;
+    height: 360px;
+}
+
+#down a {
+  padding-top: 70px;
+  max-width: 100%;
+  height: auto;
+}
+
+#down a span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 64px;
+  height: 64px;
+  margin-left: -12px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb05 1.5s infinite;
+  animation: sdb05 1.5s inf
+}
+
+.down a {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  font : normal 400 20px/1 'Josefin Sans', sans-serif;
+  letter-spacing: .1em;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+
+#restaurant {
+    border-radius: 12px;
+    weight: 540px;
+    height: 360px;
+}
+
+#tour {
+    border-radius: 12px;
+    weight: 540px;
+    height: 360px;
+}
+
+.section1 {
+    margin-bottom: 27px;
+}
+
+.section2 {
+    height: 491px;
+    padding-bottom: 53px;
+
+}
+
+#tour-cards {
+    position: relative;
+    z-index: 2;
+    min-height: 280px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    max-width: 440px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 6px -4px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    color: #333333;
+    margin-bottom: 20px;
+    border: 0 none;
+}
+
+.card[data-background="image"] {
+    background-position: center, center;
+    background-size: cover;
+    text-align: center;
+}
+
+.card-tour {
+    -webkit-transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
+    -moz-transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
+    -o-transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
+    -ms-transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
+    transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
 }
