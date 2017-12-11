@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     $(window).scroll(function(){
         if($(window).scrollTop() > $(window).height()){
@@ -7,25 +6,34 @@ $(document).ready(function(){
         else{
             $(".navbar").css({"background-color":"transparent"});
         }
-
     })
 })
 
 function searchInCity(){
     city = document.getElementById('city').value.replace(" ", "+");
     venue = document.getElementById('venue').value;
+    let sourceData;
+    let template;
 
-    jQuery.ajax({
+    $.ajax({
         type: "GET",
-        url: '/search/'+venue+'/'+city
+        url: '/search/'+venue+'/'+city,
     }).done(function(data){
-        scraped = []
-        console.log("Data:", data);
-        data.results.forEach((rowObject)=>{
-            newRow = [rowObject.name, rowObject.formatted_address]
-            scraped.push(rowObject.name)
-        })
-    });
+        console.log(data)
+        $("#results").html(data)
+    })
+
+    // jQuery.ajax({
+    //     type: "GET",
+    //     url: '/search/'+venue+'/'+city
+    // }).done(function(data){
+    //     scraped = []
+    //     console.log("Data:", data);
+    //     data.results.forEach((rowObject)=>{
+    //         newRow = [rowObject.name, rowObject.formatted_address]
+    //         scraped.push(rowObject.name)
+    //     })
+    // });
 }
 
 function createHTMLTable(doubleAry){

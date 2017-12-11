@@ -21,7 +21,6 @@ const PORT = process.env.PORT || 3000
 /****************************************************
  *  SQL Connection
  ***************************************************/
-
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize('atlasguideme', process.env.DBUSER, null, { dialect: 'postgres', logging: false });
 
@@ -31,7 +30,7 @@ sequelize
     console.log('Connection has been established successfully.');
   })
   .catch(err => {
-    console.error('Unable to connect to the database:', err);
+    console.error('Unable to connect to the database:', err.message);
   });
 
 /****************************************************

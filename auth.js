@@ -5,8 +5,9 @@ exports.createJWT = function(dbObject){
 }
 
 exports.cookieOptions = function(){
+    //Cookie should be good for 48 hours
     let jsonObject = {
-        maxAge: 1000000, 
+        maxAge: 172800000, 
         httpOnly: true
     }
     return jsonObject
@@ -15,7 +16,7 @@ exports.cookieOptions = function(){
 exports.setUserIDCookie = function(dbObject, resObject){
     token = jwt.sign({ id: dbObject.dataValues.id }, process.env.SECRETKEY);
     cookieOptions = {
-        maxAge: 1000000, 
+        maxAge: 172800000, 
         httpOnly: true
     };
     resObject.cookie('jwtToken', token, cookieOptions);
