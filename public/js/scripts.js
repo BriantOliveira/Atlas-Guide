@@ -32,18 +32,18 @@ function searchInCity(){
 **************************/
 const mapMarkers = []
 
-    function addMapMarker(settings){
-        const marker = new google.maps.Marker(settings);
-        mapMarker.append(marker);
-    }
+function addMapMarker(settings){
+    const marker = new google.maps.Marker(settings);
+    mapMarker.append(marker);
+}
 
-    function setAllMapMarkers(map){
-        for( let i = 0; i < markers.length; i++ ){
-            markers[i].setMap(map);
-        }
-        mapMarkers = [];
+function setAllMapMarkers(map){
+    for( let i = 0; i < markers.length; i++ ){
+        markers[i].setMap(map);
     }
+    mapMarkers = [];
+}
 
-    function clearMarkers(){
-        setAllMapMarkers(null);
-    }
+function clearMarkers(){
+    setAllMapMarkers(null);
+}
