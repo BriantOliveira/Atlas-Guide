@@ -6,7 +6,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-4 full-size">
-      <div id="map"><p>Loading Map...</p><i class="fa fa-spin fa-th-large fa-refresh" aria-hidden="true"></i></div>
+      <div id="map" data-lat="{{mapInitialCoords.lat}}" data-lng="{{mapInitialCoords.lng}}"><p>Loading Map...</p><i class="fa fa-spin fa-th-large fa-refresh" aria-hidden="true"></i></div>
     </div>
     
     <div class="col-sm-5 full-size">
@@ -37,22 +37,19 @@
 </div> 
 
     <script>
-      var map;
-      navigator.geolocation.getCurrentPosition((position)=>{
-            console.log(position.coords.latitude)
-            console.log(position.coords.longitude)
-            charge(position.coords.latitude, position.coords.longitude)
-            
-      })
-
-      function charge(curlat, curlong) {
-
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: curlat, lng: curlong},
-          zoom: 15
+      function initMap() {
+        initialLocation = {lat:37.810548, lng:-122.477041}
+        console.log(initialLocation)
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 9,
+          center: initialLocation
+        });
+        var marker = new google.maps.Marker({
+          position: initialLocation,
+          map: map
         });
       }
-
     </script>
-    <script src="{{mapLocation}}"
+
+    <script src="{{mapWebAPILocation}}"
     async defer></script>

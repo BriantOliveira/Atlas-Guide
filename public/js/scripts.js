@@ -9,6 +9,9 @@ $(document).ready(function(){
     });
 });
 
+/******************************
+*   Google Places API Search
+*******************************/
 function searchInCity(){
     city = document.getElementById('city').value.replace(" ", "+");
     venue = document.getElementById('venue').value;
@@ -19,36 +22,28 @@ function searchInCity(){
         type: "GET",
         url: '/search/'+venue+'/'+city,
     }).done(function(data){
-        console.log(data)
+        //console.log(data)
         $("#results").html(data)
     })
-
-    // jQuery.ajax({
-    //     type: "GET",
-    //     url: '/search/'+venue+'/'+city
-    // }).done(function(data){
-    //     scraped = []
-    //     console.log("Data:", data);
-    //     data.results.forEach((rowObject)=>{
-    //         newRow = [rowObject.name, rowObject.formatted_address]
-    //         scraped.push(rowObject.name)
-    //     })
-    // });
 }
 
-function createHTMLTable(doubleAry){
-    var table = document.createElement('table');
-    var tableBody = document.createElement('tbody');
+/*************************
+*   Map Marker Functions
+**************************/
+const mapMarkers = []
 
-    doubleAry.forEach((givenRow)=> {
-        var newRow = document.createElement('tr');
-        givenRow.forEach((givenCell)=>{
-            var newCell = document.createElement('td');
-            newCell.appendChild(document.createTextNode(givenCell));
-            newRow.appendChild(newCell);
-        });
-        tableBody.appendChild(newRow);
-        table.appendChild(tableBody);
-    });
-    return table;
-}
+    function addMapMarker(settings){
+        const marker = new google.maps.Marker(settings);
+        mapMarker.append(marker);
+    }
+
+    function setAllMapMarkers(map){
+        for( let i = 0; i < markers.length; i++ ){
+            markers[i].setMap(map);
+        }
+        mapMarkers = [];
+    }
+
+    function clearMarkers(){
+        setAllMapMarkers(null);
+    }
