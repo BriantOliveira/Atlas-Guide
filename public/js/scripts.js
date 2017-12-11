@@ -15,13 +15,6 @@ function markMap(obj){
     latitude = clickedItem.dataset.lat
     longitude = clickedItem.dataset.lng
     placeId = clickedItem.dataset.placeid
-    //console.log(clickedItem.dataset.name)
-    //console.log(Object.keys(latitude[0]))
-    // console.log(latlong)
-    // console.log(name)
-    // console.log(placeId)
-    // console.log(parseFloat(latitude))
-    // console.log(parseFloat(longitude))
     
     settings = {
         position: {lat:parseFloat(latitude), lng:parseFloat(longitude)},
@@ -29,10 +22,6 @@ function markMap(obj){
         title: name
     }
     addMapMarker(settings)
-    // let marker = new google.maps.Marker(settings);
-    // map.panTo({lat:parseFloat(latitude),lng:parseFloat(longitude)})
-    // map.setZoom(15)
-
 
 }
 
@@ -60,18 +49,13 @@ function searchInCity(){
 var mapMarker;
 
 function addMapMarker(settings){
-    // let marker = new google.maps.Marker(settings);
-    // mapMarkers.push(marker);
     if( mapMarker ){
         deleteMapMarker();
     }
     
     mapMarker = new google.maps.Marker(settings);
-
     map.panTo(settings.position)
     map.setZoom(15)
-
-
 }
 
 function deleteMapMarker(){
