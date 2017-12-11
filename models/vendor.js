@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
 });
 
 Vendor.associate = function (models) {
-    Vendor.hasMany(models.User);
+    Vendor.belongsTo(models.User);
 };
   return Vendor;
 };

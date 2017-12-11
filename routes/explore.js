@@ -12,7 +12,7 @@ const getVenues = function(options){
 module.exports = function(app) {
 
     app.get('/explore', function(req, res, next) {
-        res.send('Its working');
+        res.render('explore');
 
     });
 
