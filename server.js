@@ -45,7 +45,7 @@ let verifyAuthentication = (req, res, next) => {
       //Synchronous verification
       try{
         decodedToken = jwt.verify(token, process.env.SECRETKEY);
-        console.log("***Authenticate***");
+        //console.log("***Authenticate***");
         req.user = decodedToken.id;
       }catch(err){
         console.log("Authentication Error:", err.message);
