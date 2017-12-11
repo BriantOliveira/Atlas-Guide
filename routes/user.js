@@ -4,7 +4,7 @@ module.exports = function(app) {
             return res.redirect("/login")
         }
         console.log(req.user)
-        res.send("user id " + req.user)
+        res.render("trips")
     })
 };
 

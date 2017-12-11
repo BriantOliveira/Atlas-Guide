@@ -21,7 +21,6 @@ const PORT = process.env.PORT || 3000
 /****************************************************
  *  SQL Connection
  ***************************************************/
-
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize('atlasguideme', process.env.DBUSER, null, { dialect: 'postgres', logging: false });
 
@@ -31,7 +30,7 @@ sequelize
     console.log('Connection has been established successfully.');
   })
   .catch(err => {
-    console.error('Unable to connect to the database:', err);
+    console.error('Unable to connect to the database:', err.message);
   });
 
 /****************************************************
@@ -46,7 +45,7 @@ let verifyAuthentication = (req, res, next) => {
       //Synchronous verification
       try{
         decodedToken = jwt.verify(token, process.env.SECRETKEY);
-        console.log("***Authenticate***");
+        //console.log("***Authenticate***");
         req.user = decodedToken.id;
       }catch(err){
         console.log("Authentication Error:", err.message);
