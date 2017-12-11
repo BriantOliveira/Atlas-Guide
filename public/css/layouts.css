@@ -389,11 +389,131 @@ img {
 }
 
 .btn-link {
-    color: 	#708090	;
+    color: 	#708090;
 
 }
 
 .back {
     background-color: 	#B0C4DE	;
     font-family: 'PT Sans', sans-serif;
+}
+
+/* SIGNUP */
+
+#signup {
+    background-image: url('/img/sf-view.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: table;
+    height: 1100px;
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+.intro {
+    color: #000;
+    height: 275px;
+    width: 469px;
+    padding-top: 192px;
+
+}
+
+#information {
+    text-align: center;
+}
+/* Icons */
+.fa-umbrella::before {
+    font-size: 45px;
+}
+
+.fa-map-signs {
+    font-size: 45px;
+}
+.fa-user-secret {
+    font-size: 45px;
+}
+.page3 {
+
+    box-sizing: inherit;
+    width: 263px;
+    height: 49px;
+    padding-left: 223px;
+}
+
+ #information > p {
+     font-size: 17px;
+ }
+
+#sf-view {
+    left: 400px;
+}
+
+#register {
+    font-family: 'PT Sans', sans-serif;
+    background-color: green;
+    color: #fff;
+}
+
+.card-title {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.or {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.link {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.btn-facebook {
+    border-radius: 50%;
+     border-style: solid;
+     border-width: 2px;
+      height: 40px;
+      width: 40px;
+      padding: 8px;
+      color: #0B67E7;
+      background-color: transparent;
+      border-color: #fff;
+}
+
+.btn-google {
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    height: 40px;
+    width: 40px;
+    padding: 8px ;
+    color: #3cba54;
+    background-color: transparent;
+    border-color: #fff;
+}
+
+.btn-twitter {
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    color: deepskyblue;
+    background-color: transparent;
+    border-color: #fff;
+    height: 40px;
+    width: 40px;
+    padding: 8px;
+}
+.social {
+    width: 134px;
+    margin-left: 81px;
+}
+
+input {
+    margin-top: 10px;
 }

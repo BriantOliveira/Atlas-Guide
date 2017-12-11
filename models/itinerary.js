@@ -8,9 +8,9 @@ module.exports = (sequelize, DataTypes) => {
 });
 
 Itinerary.associate = function (models) {
-    // Itinerary.belongsTo(models.User);
     Itinerary.hasMany(models.Event);
     Itinerary.hasMany(models.Venue);
 };
+
   return Itinerary;
 };

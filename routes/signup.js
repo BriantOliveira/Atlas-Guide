@@ -63,7 +63,7 @@ const auth = require('../auth.js');
                 if(err) {
                      res.status(400)
                      console.log(err)
-                } 
+                }
                 if(result){
                     //Set authentication cookie
                     console.log("resulting result", result)
