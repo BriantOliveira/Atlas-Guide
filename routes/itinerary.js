@@ -14,7 +14,14 @@ module.exports = function(app) {
         if(!req.user){
             return res.redirect("/login");
         };
-        res.render("builditinerary",  {mapLocation: 'https://maps.googleapis.com/maps/api/js?key='+process.env.GMAPKEY+'&callback=initMap', gmapkey: process.env.GMAPKEY});
+
+        builderOptions = {
+            mapWebAPILocation: 'https://maps.googleapis.com/maps/api/js?key='+process.env.GMAPKEY+'&callback=initMap', 
+            gmapkey: process.env.GMAPKEY,
+            mapInitialCoords: {lat:"37.810548", lng:"-122.477041"}
+        };
+
+        res.render("builditinerary",  builderOptions);
     });
 
     app.post('/itinerary', function(req, res, next) {
@@ -49,6 +56,7 @@ module.exports = function(app) {
                 //console.log(data.toString());
                 stringTemplate = data.toString();
                 compiledTemplate = Handlebars.compile(stringTemplate)
+                //console.log(json.results)
                 returnedHTML = compiledTemplate({results:json.results})
                 res.send(returnedHTML);
             });

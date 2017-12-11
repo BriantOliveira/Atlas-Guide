@@ -6,9 +6,39 @@ $(document).ready(function(){
         else{
             $(".navbar").css({"background-color":"transparent"});
         }
-    })
-})
+    });
+});
 
+function markMap(obj){
+    clickedItem = event.target;
+    name = clickedItem.dataset.name
+    latitude = clickedItem.dataset.lat
+    longitude = clickedItem.dataset.lng
+    placeId = clickedItem.dataset.placeid
+    //console.log(clickedItem.dataset.name)
+    //console.log(Object.keys(latitude[0]))
+    // console.log(latlong)
+    // console.log(name)
+    // console.log(placeId)
+    // console.log(parseFloat(latitude))
+    // console.log(parseFloat(longitude))
+    
+    settings = {
+        position: {lat:parseFloat(latitude), lng:parseFloat(longitude)},
+        map: map,
+        title: name
+    }
+    addMapMarker(settings)
+    // let marker = new google.maps.Marker(settings);
+    // map.panTo({lat:parseFloat(latitude),lng:parseFloat(longitude)})
+    // map.setZoom(15)
+
+
+}
+
+/******************************
+*   Google Places API Search
+*******************************/
 function searchInCity(){
     city = document.getElementById('city').value.replace(" ", "+");
     venue = document.getElementById('venue').value;
@@ -19,36 +49,43 @@ function searchInCity(){
         type: "GET",
         url: '/search/'+venue+'/'+city,
     }).done(function(data){
-        console.log(data)
         $("#results").html(data)
     })
-
-    // jQuery.ajax({
-    //     type: "GET",
-    //     url: '/search/'+venue+'/'+city
-    // }).done(function(data){
-    //     scraped = []
-    //     console.log("Data:", data);
-    //     data.results.forEach((rowObject)=>{
-    //         newRow = [rowObject.name, rowObject.formatted_address]
-    //         scraped.push(rowObject.name)
-    //     })
-    // });
 }
 
-function createHTMLTable(doubleAry){
-    var table = document.createElement('table');
-    var tableBody = document.createElement('tbody');
+/*************************
+*   Map Marker Functions
+**************************/
+//const mapMarkers = Array()
+var mapMarker;
 
-    doubleAry.forEach((givenRow)=> {
-        var newRow = document.createElement('tr');
-        givenRow.forEach((givenCell)=>{
-            var newCell = document.createElement('td');
-            newCell.appendChild(document.createTextNode(givenCell));
-            newRow.appendChild(newCell);
-        });
-        tableBody.appendChild(newRow);
-        table.appendChild(tableBody);
-    });
-    return table;
+function addMapMarker(settings){
+    // let marker = new google.maps.Marker(settings);
+    // mapMarkers.push(marker);
+    if( mapMarker ){
+        deleteMapMarker();
+    }
+    
+    mapMarker = new google.maps.Marker(settings);
+
+    map.panTo(settings.position)
+    map.setZoom(15)
+
+
+}
+
+function deleteMapMarker(){
+    mapMarker.setMap(null)
+    mapMarker = null
+}
+
+function setAllMapMarkers(map){
+    for( let i = 0; i < markers.length; i++ ){
+        markers[i].setMap(map);
+    }
+    this.mapMarkers = [];
+}
+
+function clearMarkers(){
+    setAllMapMarkers(null);
 }
