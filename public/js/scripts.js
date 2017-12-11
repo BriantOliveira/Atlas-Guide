@@ -9,6 +9,33 @@ $(document).ready(function(){
     });
 });
 
+function markMap(obj){
+    clickedItem = event.target;
+    name = clickedItem.dataset.name
+    latitude = clickedItem.dataset.lat
+    longitude = clickedItem.dataset.lng
+    placeId = clickedItem.dataset.placeid
+    //console.log(clickedItem.dataset.name)
+    //console.log(Object.keys(latitude[0]))
+    // console.log(latlong)
+    // console.log(name)
+    // console.log(placeId)
+    console.log(parseFloat(latitude))
+    console.log(parseFloat(longitude))
+    
+    settings = {
+        position: {lat:parseFloat(latitude), lng:parseFloat(longitude)},
+        title: "hello"
+    }
+    //addMapMarker(settings)
+    let marker = new google.maps.Marker(settings);
+    marker.setMap(map)
+    map.panTo({lat:parseFloat(latitude),lng:parseFloat(longitude)})
+    map.setZoom(15)
+    //mapMarkers.push(marker);
+
+}
+
 /******************************
 *   Google Places API Search
 *******************************/
@@ -22,7 +49,6 @@ function searchInCity(){
         type: "GET",
         url: '/search/'+venue+'/'+city,
     }).done(function(data){
-        //console.log(data)
         $("#results").html(data)
     })
 }
@@ -30,18 +56,18 @@ function searchInCity(){
 /*************************
 *   Map Marker Functions
 **************************/
-const mapMarkers = []
+const mapMarkers = Array()
 
 function addMapMarker(settings){
-    const marker = new google.maps.Marker(settings);
-    mapMarker.append(marker);
+    let marker = new google.maps.Marker(settings);
+    mapMarkers.push(marker);
 }
 
 function setAllMapMarkers(map){
     for( let i = 0; i < markers.length; i++ ){
         markers[i].setMap(map);
     }
-    mapMarkers = [];
+    this.mapMarkers = [];
 }
 
 function clearMarkers(){

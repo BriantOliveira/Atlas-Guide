@@ -1,9 +1,11 @@
 <div class="row">
     {{#each results}}
-        <div class="col-sm-4 justify-content-center">
+        <div class="col-sm-4 justify-content-center venue-result">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">{{name}}</h4>
+                    <a href="javascript:void(0)">
+                        <h4 class="card-title"  onclick="markMap(this)" data-name="{{name}}" data-lat="{{geometry.location.lat}}" data-lng="{{geometry.location.lng}}" data-placeid="{{place_id}}">{{name}}</h4>
+                    </a>
                     <small class="text-muted">{{this.formatted_address}}</small>
                 </div> 
             </div>

@@ -56,6 +56,7 @@ module.exports = function(app) {
                 //console.log(data.toString());
                 stringTemplate = data.toString();
                 compiledTemplate = Handlebars.compile(stringTemplate)
+                //console.log(json.results)
                 returnedHTML = compiledTemplate({results:json.results})
                 res.send(returnedHTML);
             });
