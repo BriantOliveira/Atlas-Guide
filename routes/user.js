@@ -1,10 +1,10 @@
 module.exports = function(app) {
-    app.get("/trips", (req, res)=>{
+
+    app.get("/feed", (req, res)=>{
         if(!req.user){
             return res.redirect("/login")
         }
         console.log(req.user)
-        res.render("trips")
-    })
+        res.render('feed');
+    });
 };
-    

@@ -1,11 +1,15 @@
 module.exports = (sequelize, DataTypes) => {
   var Tour = sequelize.define('Tour', {
     vendorId: DataTypes.STRING,
-    tourPoint: DataTypes.TEXT,
-    restStop: DataTypes.TEXT,
-    restStartsAt: DataTypes.STRING,
+    tourName: DataTypes.STRING, allowNull: false,
+    description: DataTypes.STRING, allowNull: false,
+    tourPoints: DataTypes.TEXT, allowNull: false,
+    startsAt: DataTypes.DATE, allowNull: false,
+    endsAt: DataTypes.DATE, allowNull: false,
+    restStop: DataTypes.TEXT, allowNull: false,
+    restStartsAt: DataTypes.STRING, allowNull: false,
     tourRating: DataTypes.INTEGER,
-    imageLocation: DataTypes.STRING
+    images: DataTypes.TEXT, allowNull: true
 });
 
 Tour.associate = function (models) {

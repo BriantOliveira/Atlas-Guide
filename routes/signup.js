@@ -68,11 +68,10 @@ const auth = require('../auth.js');
                     //Set authentication cookie
                     console.log("resulting result", result)
                     auth.setUserIDCookie(data, res);
-                    res.redirect('/trips')
+                    res.redirect('/feed')
                 }else{
                     console.log('wrong username or password')
                 }
-
             });
     });
 });
