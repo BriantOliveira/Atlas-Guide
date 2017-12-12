@@ -34,7 +34,7 @@ const auth = require('../auth.js');
                 //console.log(savedUser.dataValues.id)
                 console.log("saved", savedUser.first)
                 auth.setUserIDCookie(savedUser, res);
-                res.redirect('/trips')
+                res.redirect('/feed');
 
             }).catch((err)=>{
                 console.log("User Creation error:", err.message);

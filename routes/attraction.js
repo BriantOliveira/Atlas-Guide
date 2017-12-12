@@ -5,8 +5,6 @@
  *      Router File
  ******************************************/
 const models = require('../models');
-const jwt = require('jsonwebtoken');
-const auth = require('../auth.js');
 
  module.exports = function (app) {
 
@@ -22,7 +20,7 @@ const auth = require('../auth.js');
      app.get('/tourism/:id', (req, res) => {
          const vendorId = req.params.id;
          models.Tour.findById(tourId).then((tour) => {
-             res.send("Show tours")
+             res.send("attraction")
          })
      })
 
