@@ -83,6 +83,9 @@ require('./routes/itinerary.js')(app);
 require('./routes/explore.js')(app);
 require('./routes/user.js')(app);
 require('./routes/attraction.js')(app);
+require('./routes/tour.js')(app);
+require('./routes/venues.js')(app);
+
 
 // Add 404 Error page routing
 app.use(function (req, res, next) {

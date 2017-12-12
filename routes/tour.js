@@ -5,6 +5,11 @@
  ******************************************/
 const models = require('../models');
 
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+
+const auth = require('../auth.js');
+
 module.exports = function(app) {
 
 
@@ -19,12 +24,12 @@ module.exports = function(app) {
 
 
     //SHOW
-    app.get('/tours/:id' (req, res) => {
-        const vendorId = req.params.id;
-        models.Tour.findById(tourId).then((tour) => {
-            res.send("this page is working");
-        })
-    });
+    // app.get('/tours/:id' (req, res) => {
+    //     const vendorId = req.params.id;
+    //     models.Tour.findById(tourId).then((tour) => {
+    //         res.json({msg: 'tour show'})
+    //     })
+    // });
 
     //CREATE
     app.post('/tours/new', (req, res) => {
