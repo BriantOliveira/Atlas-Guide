@@ -1,0 +1,8 @@
+.search-container{
+    display: flex;
+    justify-content: center;
+}
+
+input.query{
+    width: 800px;
+}

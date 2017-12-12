@@ -9,31 +9,28 @@ $(document).ready(function(){
     });
 });
 
-function markMap(obj){
-    clickedItem = event.target;
-    name = clickedItem.dataset.name
-    latitude = clickedItem.dataset.lat
-    longitude = clickedItem.dataset.lng
-    placeId = clickedItem.dataset.placeid
-    //console.log(clickedItem.dataset.name)
-    //console.log(Object.keys(latitude[0]))
-    // console.log(latlong)
-    // console.log(name)
-    // console.log(placeId)
-    // console.log(parseFloat(latitude))
-    // console.log(parseFloat(longitude))
-
+function markMap(event){
+    console.log("event",event);
+    let clickedItem = event.target;
+    name = clickedItem.dataset.name;
+    latitude = clickedItem.dataset.lat;
+    longitude = clickedItem.dataset.lng;
+    placeId = clickedItem.dataset.placeid;
+    zoomLevel = map.getZoom();
+    
     settings = {
         position: {lat:parseFloat(latitude), lng:parseFloat(longitude)},
         map: map,
         title: name
     }
-    addMapMarker(settings)
-    // let marker = new google.maps.Marker(settings);
-    // map.panTo({lat:parseFloat(latitude),lng:parseFloat(longitude)})
-    // map.setZoom(15)
+    addMapMarker(settings, zoomLevel)
+    $(".venue-detail").css("visibility", "visible");
 
+}
 
+function hideVenueDetail(){
+    console.log("I'm herer");
+    $(".venue-detail").css("visibility", "hidden");
 }
 
 /******************************
@@ -49,8 +46,21 @@ function searchInCity(){
         type: "GET",
         url: '/search/'+venue+'/'+city,
     }).done(function(data){
-        $("#results").html(data)
-    })
+        $("#results").html(data);
+    });
+}
+
+function pointOfInterestSearch(){
+    query = document.getElementById('query').value.replace(" ", "+");
+    let sourceData;
+    let template;
+
+    $.ajax({
+        type: "GET",
+        url: '/search/' + query,
+    }).done(function(data){
+        $("#results").html(data);
+    });
 }
 
 /*************************
@@ -59,24 +69,19 @@ function searchInCity(){
 //const mapMarkers = Array()
 var mapMarker;
 
-function addMapMarker(settings){
-    // let marker = new google.maps.Marker(settings);
-    // mapMarkers.push(marker);
+function addMapMarker(settings, zoom = 15){
     if( mapMarker ){
         deleteMapMarker();
     }
 
     mapMarker = new google.maps.Marker(settings);
-
-    map.panTo(settings.position)
-    map.setZoom(15)
-
-
+    map.panTo(settings.position);
+    map.setZoom(zoom);
 }
 
 function deleteMapMarker(){
-    mapMarker.setMap(null)
-    mapMarker = null
+    mapMarker.setMap(null);
+    mapMarker = null;
 }
 
 function setAllMapMarkers(map){
