@@ -1,3 +1,9 @@
+/*******************************************
+ *  Atlas Guide
+ *      Your Source for travel itineraries
+ *      Router File
+ ******************************************/
+
 module.exports = function(app) {
 
     app.get("/feed", (req, res)=>{
@@ -7,4 +13,5 @@ module.exports = function(app) {
         console.log(req.user)
         res.render('feed');
     });
+
 };
