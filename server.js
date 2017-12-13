@@ -12,7 +12,7 @@ const hbs = require('express-handlebars')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const path = require('path')
-const stripe = require('stripe')(process.env.STRIPESECRETKEY)
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 
 //Instantiate express
 const app = express()

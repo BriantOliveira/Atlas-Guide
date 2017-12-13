@@ -7,7 +7,7 @@
 const models = ('../models');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const stripe = require('stripe')(process.env.STRIPESECRETKEY);
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const auth = require('../auth.js');
 
 module.exports = function(app) {
@@ -17,9 +17,8 @@ module.exports = function(app) {
         if(!req.user){
             return res.redirect("/login")
         }
+        res.render('purchase');
         //console.log('Here it is the id: ', req.params.tourId)
-        res.render('purchase')
-
         // app.get('/tours/:tourId/purchase' (req.res) => {
         //     console.log('Here it is the id: ', req.params.tourId)
         //     res.render('purchase', {tour: tours})
