@@ -5,9 +5,10 @@
  ******************************************/
 var models = require('../models');
 
-const getVenues = function(options){
+// const getVenues = function(options){
+//
+// } // <-- Is this for the itinerary?
 
-}
 
 module.exports = function(app) {
 

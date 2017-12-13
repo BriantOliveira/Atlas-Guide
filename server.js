@@ -10,9 +10,10 @@ const express = require('express')
 const favicon = require('serve-favicon')
 const hbs = require('express-handlebars')
 const jwt = require('jsonwebtoken')
-var bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt')
 const path = require('path')
 const fileUpload = require('express-fileupload');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 
 //Instantiate express
 const app = express()
@@ -91,6 +92,7 @@ require('./routes/attraction.js')(app);
 require('./routes/tour.js')(app);
 require('./routes/venues.js')(app);
 require('./routes/nightlife.js')(app);
+require('./routes/charge.js')(app);
 
 // Add 404 Error page routing
 app.use(function (req, res, next) {
