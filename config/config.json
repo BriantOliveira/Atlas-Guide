@@ -14,10 +14,10 @@
     "dialect": "postgres"
   },
   "production": {
-    "username": "root",
-    "password": null,
+    "username": "oozlnkkmdzrmzy",
+    "password": "c1a529e52c97946d16b7d79956844a1c25d8b99e08847c6e20f24246035be833",
     "database": "atlasguideme",
-    "host": "127.0.0.1",
+    "host": "ec2-107-22-165-47.compute-1.amazonaws.com",
     "dialect": "postgres"
   }
 }
