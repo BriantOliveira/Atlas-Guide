@@ -35,3 +35,4 @@ node_modules
 .vscode
 .DS_Store
 /config/dev_key.js
+/config/config.json
