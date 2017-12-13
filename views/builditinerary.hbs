@@ -30,9 +30,9 @@
           <i onclick="hideItin();" class="fa fa-times" aria-hidden="true"></i>
         </a>
         <h3 class="itin-title"></h3>
-        <form action="/events/add">
-          <input type="text" name="date" class="form-control no-border" placeholder="Date">
-          <input type="text" name="time" class="form-control no-border" placeholder="Time">
+        <form class="form-add-itinerary">
+          <input type="text" name="date" id="itin-field-date" class="form-control no-border itin-date" placeholder="Date">
+          <input type="text" name="time" id="itin-field-time" class="form-control no-border itin-time" placeholder="Time">
           <input type='submit' value="Add to Itinerary"/>
         </form>
 

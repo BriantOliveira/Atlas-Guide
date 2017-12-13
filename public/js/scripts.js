@@ -8,10 +8,30 @@ $(document).ready(function(){
         }
     });
 });
+
+// Form Submission Functionality
 $('.search-form').submit(function(ev) {
     ev.preventDefault(); // to stop the form from submitting
     pointOfInterestSearch();
 });
+
+$(".form-add-itinerary").submit(function(event){
+    event.preventDefault();
+    
+    hideItin();
+    itindate = $("#itin-field-date").val();
+    itintime = $("#itin-field-time").val();
+    $("#itin-field-date").val("");
+    $("#itin-field-time").val("");
+    console.log(itindate)
+    addToItinerary();
+    
+})
+
+function addToItinerary(){
+    
+
+}
 
 function hideItin(){
     $('.add-itin-modal').css('visibility', "hidden");
