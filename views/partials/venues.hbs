@@ -5,12 +5,12 @@
                 <div class="card-body">
                     <div class="venue-title">
                         <a href="javascript:void(0)">
-                            <h4 class="card-title"  onclick="return markMap(event);" data-name="{{name}}" data-lat="{{geometry.location.lat}}" data-lng="{{geometry.location.lng}}" data-placeid="{{place_id}}">{{name}}</h4>
+                            <h4 class="card-title"  onclick="return updateVenueDetail(event);" data-name="{{name}}" data-lat="{{geometry.location.lat}}" data-lng="{{geometry.location.lng}}" data-placeid="{{place_id}}">{{name}}</h4>
                         </a>
                     </div>
                     <small class="text-muted">{{this.formatted_address}}</small>
                     <div class="itinerary-add-container">
-                        <a href="javascript:void(0)" class=""><i class="fa fa-plus-square" aria-hidden="true"></i> Add to Itinerary</a>
+                        <a href="javascript:void(0)" class="" data-placeid="{{place_id}}" data-name="{{name}}" onclick="return showAddToItinerary(event);"><i class="fa fa-plus-square" aria-hidden="true"></i> Add to Itinerary</a>
                     </div>
                 </div> 
             </div>

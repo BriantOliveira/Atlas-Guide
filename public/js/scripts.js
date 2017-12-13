@@ -9,6 +9,25 @@ $(document).ready(function(){
     });
 });
 
+function hideItin(){
+    $('.add-itin-modal').css('visibility', "hidden");
+}
+
+function showAddToItinerary(event){
+    console.log(event.target)
+    let gooleID = $(event.target).data('place_id')
+    let name = $(event.target).data('name')
+    $(".itin-title").html(name)
+    $(".venue-detail").css("visibility", "hidden");
+    $('.add-itin-modal').css('visibility', "visible");
+}
+
+
+
+function updateVenueDetail(e){
+    markMap(e)
+}
+
 function markMap(event){
     console.log("event",event);
     let clickedItem = event.target;
@@ -62,6 +81,7 @@ function pointOfInterestSearch(){
         $("#results").html(data);
     });
 }
+
 
 /*************************
 *   Map Marker Functions

@@ -23,7 +23,7 @@ module.exports = function(app) {
         res.render("builditinerary",  builderOptions);
     });
 
-    app.post('/itinerary', function(req, res, next) {
+    app.post('/itinerary/new', function(req, res) {
         models.Itinerary.create(req.body).then((itinerary) => {
             res.send('this is all itinerary');
         });
@@ -43,7 +43,7 @@ module.exports = function(app) {
             //load handlebars file as text
             fs.readFile( __dirname + '/../views/partials/venues.hbs', function (err, data) {
                 if (err) {
-                console.log(err.message); 
+                    console.log(err.message); 
                 }
                 //console.log(data.toString());
                 stringTemplate = data.toString();

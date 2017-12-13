@@ -6,5 +6,13 @@ module.exports = function(app) {
         console.log(req.user)
         res.render("trips")
     })
+
+    app.get('/profile/update', (req, res)=>{
+        res.render('profile');
+    });
+
+    app.post('/profile/update', (req, res)=>{
+        res.send("post")
+    })
 };
     
