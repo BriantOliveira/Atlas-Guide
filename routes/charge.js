@@ -14,6 +14,9 @@ module.exports = function(app) {
 
 
     app.get('/buynow', (req, res) => {
+        if(!req.user){
+            return res.redirect("/login")
+        }
         //console.log('Here it is the id: ', req.params.tourId)
         res.render('purchase')
 

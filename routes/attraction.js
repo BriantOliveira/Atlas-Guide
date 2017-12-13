@@ -5,6 +5,9 @@
  *      Router File
  ******************************************/
 const models = require('../models');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+const auth = require('../auth.js');
 
  module.exports = function (app) {
 
@@ -55,7 +58,7 @@ const models = require('../models');
              res.status(200).json({msg: 'successfully deleted', event});
             }).catch((err) => {
                 if(err) {
-               res.status(400).json({msg: 'ERRO: tour was not deleted'})
+               res.status(400).json({msg: 'ERROR: tour was not deleted'})
                 }
         })
     });

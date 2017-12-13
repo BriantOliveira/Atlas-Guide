@@ -6,7 +6,6 @@
  const models = require('../models');
  const jwt = require('jsonwebtoken');
  const bcrypt = require('bcrypt');
-
  const auth = require('../auth.js');
 
  module.exports = function(app) {
