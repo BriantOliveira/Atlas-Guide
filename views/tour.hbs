@@ -1,4 +1,4 @@
-<div style="overflow-x: hidden">
+<div style="overflow-x: hidden; background-color: #E6C274">
     <!--NAVBAR -->
     <nav class="navbar navbar-expand-lg fixed-top navbar-warning nav-down" color-on-scroll="500">
         <div class="container-fluid">
@@ -34,10 +34,30 @@
         </div>
     </nav>
     <!-- First Section -->
-    <div class="section-2">
+    <div>
+        <form action="/charge" method="POST" style="margin-top: 113px; margin-left: 187px;" style="background-color: #E6C274">
+          <script
+            src="https://checkout.stripe.com/checkout.js"
+            class="stripe-button"
+            data-key="pk_test_h7r9aMiH8cudzWGBMxqPNIcT"
+            data-amount="30000"
+            data-name="Atlas Guide"
+            data-description="Atlas Guide Tours"
+            data-image="/img/marketplace.png"
+            data-locale="auto">
+          </script>
+          <!-- <script>
+              $document.getElementByClassName('stripe-button-el')[0]
+              .style.display = "none";
+          </script> -->
+          <!-- <button type="submit" class="btn btn-outline-dark text-white btn-lng">Buy Now</button> -->
+        </form>
+    </div>
+
+    <div class="section-2" style="background-color: #E6C274">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 offset-md-2 text-center" style="margin-top: 87px;">
+                <div class="col-md-8 offset-md-2 text-center" style="margin-top: 2px;">
                     <h4 class="title">Tours</h4>
                     <h2 class="description">“Life is either a daring adventure or nothing.”</h2>
                     <br/>
