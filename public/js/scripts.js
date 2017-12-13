@@ -8,6 +8,10 @@ $(document).ready(function(){
         }
     });
 });
+$('.search-form').submit(function(ev) {
+    ev.preventDefault(); // to stop the form from submitting
+    pointOfInterestSearch();
+});
 
 function hideItin(){
     $('.add-itin-modal').css('visibility', "hidden");
