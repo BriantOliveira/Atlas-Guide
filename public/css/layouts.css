@@ -50,11 +50,6 @@ html, body {
     transform: translate(-50%,-50%);
 }
 
-.map-container{
-    width: 100px;
-    height: 100px;
-}
-
 .results-row{
     margin-top: 20px;
     width: 100%;

@@ -4,17 +4,37 @@
 
 <div class="container">
   <div class="row">
+
+    <!-- Venue Modal -->
     <div class="venue-detail">
+      <a href="javascript:void(0)" class="ui-close">
+        <i onclick="hideVenueDetail();" class="fa fa-times" aria-hidden="true"></i>
+      </a>
 
-      <a href="javascript:void(0)" class="ui-close"><i onclick="hideVenueDetail();" class="fa fa-times" aria-hidden="true"></i></a>
+      <!-- Venue Information -->
+      <div class="venue-info">
 
-      <!--map --> 
+      </div>
+      <!-- map --> 
       <div class="col-sm-4 map-container">
         <div id="map" data-lat="{{mapInitialCoords.lat}}" data-lng="{{mapInitialCoords.lng}}">
           <p>Loading Map...</p>
           <i class="fa fa-spin fa-th-large fa-refresh" aria-hidden="true"></i>
         </div>
       </div>
+    </div>
+
+    <!-- Add Itinerary Modal -->
+    <div class="add-itin-modal">
+        <a href="javascript:void(0)" class="ui-close">
+          <i onclick="hideItin();" class="fa fa-times" aria-hidden="true"></i>
+        </a>
+        <h3 class="itin-title"></h3>
+        <form action="/events/add">
+          <input type="text" name="date" class="form-control no-border" placeholder="Date">
+          <input type="text" name="time" class="form-control no-border" placeholder="Time">
+          <input type='submit' value="Add to Itinerary"/>
+        </form>
 
     </div>
     
