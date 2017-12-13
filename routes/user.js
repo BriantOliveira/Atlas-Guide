@@ -16,7 +16,14 @@ module.exports = function(app) {
             return res.redirect("/login")
         }
         console.log(req.user)
-        res.render('feed');
+        res.render("trips")
+    })
+
+    app.get('/profile/update', (req, res)=>{
+        res.render('profile');
     });
 
+    app.post('/profile/update', (req, res)=>{
+        res.send("post")
+    })
 };

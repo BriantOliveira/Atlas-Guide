@@ -4,12 +4,14 @@
 
 html, body {
     height: 100%;
-    margin: 0;
+    margin: 0px;
     padding: 0;
 }
 
 #map {
-    min-height: 300px;
+    position: relative;
+    top:0px;
+    bottom: 0px;
     height: 100%;
     width: 100%;
     color: #fff;
@@ -27,6 +29,60 @@ html, body {
     padding: 0px;
     margin-bottom: -80px;
     margin-top: -20px;
+}
+.venue-detail{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: fixed;
+    visibility: hidden;
+    background-color: rgba(255, 255, 255, 0.95);
+    max-width: 700px;
+    width: 90vw;
+    max-height: 100vh;
+    height: 400px;
+    z-index: 1000;
+    border: 1px solid #efefef;
+    border-radius: 10px;
+    box-shadow:5px 10px 20px #dedede;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.results-row{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.card-title{
+    margin-top: -3px;
+}
+
+.venue-result{
+    display: flex;
+    justify-content: center;
+    margin: 0px 10px 10px 10px;
+    padding: 10px;
+    border: 1px solid #efefef;
+    box-shadow:3px 3px 8px #dedede;  
+}
+
+.ui-close{
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+.fa-times{
+    font-size: 25px;
+}
+
+.itinerary-add-container{
+    margin-top: 5px;
 }
 
 /* NAVBAR */
@@ -159,6 +215,8 @@ h2 {
     height: auto;
 
 }
+
+
 
 /* MAP */
 

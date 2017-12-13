@@ -12,10 +12,14 @@ const hbs = require('express-handlebars')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const path = require('path')
+const fileUpload = require('express-fileupload');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 
 //Instantiate express
 const app = express()
+
+// use default options
+app.use(fileUpload());
 
 const PORT = process.env.PORT || 3000
 
@@ -65,6 +69,7 @@ let verifyUserLoggedIn = (req, res)=>{
 /****************************************************
  *  Add Middlewarez
  ***************************************************/
+
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: true}));

@@ -1,37 +1,53 @@
-
 <div class="jumbotron text-center">
   <h1>Create Travel Itinerary</h1>
 </div>
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-4 full-size">
-      <div id="map" data-lat="{{mapInitialCoords.lat}}" data-lng="{{mapInitialCoords.lng}}"><p>Loading Map...</p><i class="fa fa-spin fa-th-large fa-refresh" aria-hidden="true"></i></div>
+
+    <!-- Venue Modal -->
+    <div class="venue-detail">
+      <a href="javascript:void(0)" class="ui-close">
+        <i onclick="hideVenueDetail();" class="fa fa-times" aria-hidden="true"></i>
+      </a>
+
+      <!-- Venue Information -->
+      <div class="venue-info">
+
+      </div>
+      <!-- map --> 
+      <div class="col-sm-4 map-container">
+        <div id="map" data-lat="{{mapInitialCoords.lat}}" data-lng="{{mapInitialCoords.lng}}">
+          <p>Loading Map...</p>
+          <i class="fa fa-spin fa-th-large fa-refresh" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Itinerary Modal -->
+    <div class="add-itin-modal">
+        <a href="javascript:void(0)" class="ui-close">
+          <i onclick="hideItin();" class="fa fa-times" aria-hidden="true"></i>
+        </a>
+        <h3 class="itin-title"></h3>
+        <form class="form-add-itinerary">
+          <input type="text" name="date" id="itin-field-date" class="form-control no-border itin-date" placeholder="Date">
+          <input type="text" name="time" id="itin-field-time" class="form-control no-border itin-time" placeholder="Time">
+          <input type='submit' value="Add to Itinerary"/>
+        </form>
+
     </div>
     
-    <div class="col-sm-5 full-size">
-     <form>
-       
-      <input id="gmapkey" name="prodId" type="hidden" value={{gmapkey}}>
-      <label for="city">City:</label>
-      
-      <input type="text" class="form-control" id="city">
-      
-      <select name="mydropdown" id="venue">
-      <option value="bars">Bars</option>
-      <option value="museums">Museums</option>
-      <option value="restaurants">Restaurants</option>
-      <option value="tours">Tours</option>
-      <option value="museums">Museums</option>
-      <option value="parks">Parks</option>
+    <div class="col-sm-12 search-container">
 
-      </select>
-        <br/>
-       <button type="button" class="btn btn-primary" onclick="return searchInCity();">Find</button>
-     </form>
+      <form class="col-sm-12 search-form">
+        <input id="gmapkey" name="prodId" type="hidden" value={{gmapkey}}>
+        <input type="text" class="form-control query" id="query">
+        <button type="button" class="btn btn-primary" onclick="return pointOfInterestSearch();">Find</button>
+      </form>
     </div>
     <div id="results" class="col-xs-12 results clearfix ">
-      hello
+      <!-- Venue Results are placed in here -->
     </div>
   </div>
 </div> 
