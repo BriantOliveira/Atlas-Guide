@@ -13,11 +13,21 @@ const auth = require('../auth.js');
 module.exports = function(app) {
 
 
-    app.get('/buynow', (req, res) => {
+    // app.get('/buynow', (req, res) => {
+    //     if(!req.user){
+    //         return res.redirect("/login")
+    //     }
+    //     res.render('purchase');
+    //     //console.log('Here it is the id: ', req.params.tourId)
+    //     // app.get('/tours/:tourId/purchase' (req.res) => {
+    //     //     console.log('Here it is the id: ', req.params.tourId)
+    //     //     res.render('purchase', {tour: tours})
+    // })
+    app.get('/success', (req, res) => {
         if(!req.user){
             return res.redirect("/login")
         }
-        res.render('purchase');
+        res.render('success');
         //console.log('Here it is the id: ', req.params.tourId)
         // app.get('/tours/:tourId/purchase' (req.res) => {
         //     console.log('Here it is the id: ', req.params.tourId)
@@ -26,7 +36,7 @@ module.exports = function(app) {
 
     //STRIPE PAYMENT
     app.post('/charge', (req, res) => {
-        const amount = 30000;
+        const amount = 10000;
         // console.log(req.body)
         // res.send('TEST')
 

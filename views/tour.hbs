@@ -1,4 +1,4 @@
-<div style="overflow-x: hidden">
+<div style="overflow-x: hidden; background-color: #E6C274">
     <!--NAVBAR -->
     <nav class="navbar navbar-expand-lg fixed-top navbar-warning nav-down" color-on-scroll="500">
         <div class="container-fluid">
@@ -34,26 +34,46 @@
         </div>
     </nav>
     <!-- First Section -->
-    <div class="section-2">
+    <div>
+        <form action="/charge" method="POST" style="margin-top: 113px; margin-left: 187px;" style="background-color: #E6C274">
+          <script
+            src="https://checkout.stripe.com/checkout.js"
+            class="stripe-button"
+            data-key="pk_test_h7r9aMiH8cudzWGBMxqPNIcT"
+            data-amount="30000"
+            data-name="Atlas Guide"
+            data-description="Atlas Guide Tours"
+            data-image="/img/marketplace.png"
+            data-locale="auto">
+          </script>
+          <!-- <script>
+              $document.getElementByClassName('stripe-button-el')[0]
+              .style.display = "none";
+          </script> -->
+          <!-- <button type="submit" class="btn btn-outline-dark text-white btn-lng">Buy Now</button> -->
+        </form>
+    </div>
+
+    <div class="section-2" style="background-color: #E6C274">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 offset-md-2 text-center">
-                    <h4 class="title">Explore other cities</h4>
-                    <h2 class="description">Live with no excuses and travel with no regrets. The world is a book full of adventures, never stop exploring.</h2>
+                <div class="col-md-8 offset-md-2 text-center" style="margin-top: 2px;">
+                    <h4 class="title">Tours</h4>
+                    <h2 class="description">“Life is either a daring adventure or nothing.”</h2>
                     <br/>
                 </div>
             </div>
             <div class="row">
                 <div id="colum" class="col-md-4">
-                    <div id="tour-cards" class="card card-shadow card-tour" data-background="image" style="background-image: url('img/san.jpeg')">
+                    <div id="tour-cards" class="card card-shadow card-tour" data-background="image" style="background-image: url('https://www.pier39.com/wp-content/uploads/2016/09/Carousel_2_1170x550-1024x481.jpg')">
                         <div id="description" class="card-block">
-                            <h4 class="card-places">San Francisco</h4>
+                            <h4 class="card-places">PIER 39</h4>
                             <div class="card-icon">
                                 <i id="ball" class="nc-icon nc-map-big"></i>
-                                <!-- <h6> 8 seats </h6>
-                         <p> $300 </p> -->
+                                <h6> 4 seats </h6>
+                                <p> $60 </p>
                             </div>
-                            <p class="card-description" style="font-size: 16px;">Acrimson bridge, cable cars, a sparkling bay, and streets lined with elegant Victorian homes — San Francisco is undeniably one of the world’s great cities.</p>
+                            <p class="card-description" style="font-size: 16px;">From amazing views and a sea of sea lions to chowder bread bowls and California wines, your visit to San Francisco starts at PIER 39. The most visited destination in San Francisco—offers two levels of dining, entertainment, all surrounded by unbeatable views of the city and the bay.</p>
 
                             <div class="card-footer">
                                 <a href="/buynow" class="btn btn-link btn-neutral">
@@ -64,15 +84,15 @@
                     </div>
                 </div>
                 <div id="colum" class="col-md-4">
-                    <div id="tour-cards" class="card card-shadow card-tour" data-background="image" style="background-image: url('https://static.pexels.com/photos/534757/pexels-photo-534757.jpeg')">
+                    <div id="tour-cards" class="card card-shadow card-tour" data-background="image" style="background-image: url('/img/bridge.jpeg')">
                         <div id="description" class="card-block">
-                            <h4 class="card-places">New York</h4>
+                            <h4 class="card-places">Golden Gate Bridge</h4>
                             <div class="card-icon">
                                 <i id="ball" class="nc-icon nc-pin-3"></i>
-                                <!-- <h6> 4 seats </h6>
-                         <p> $270 </p> -->
+                                <h6> 4 seats </h6>
+                                <p> $100 </p>
                             </div>
-                            <p class="card-description" style="font-size: 16px;">New York is the most ethnically diverse, religiously varied, famously congested, and, in the eyes of many, the most attractive urban centre in the country.</p>
+                            <p class="card-description" style="font-size: 16px;">Once called "the bridge that couldn't be built," today it is one the seven wonders of the modern world. This magnificent bridge, perhaps San Francisco's most famous landmark, opened in 1937 after a four-year struggle against relentless winds, fog, rocks and treacherous tides.</p>
 
                             <div class="card-footer">
                                 <a href="/buynow" class="btn btn-link btn-neutral">
@@ -83,15 +103,15 @@
                     </div>
                 </div>
                 <div id="colum" class="col-md-4">
-                    <div id="tour-cards" class="card card-shadow card-tour" data-background="image" style="background-image: url('https://static.pexels.com/photos/61106/pexels-photo-61106.jpeg')">
+                    <div id="tour-cards" class="card card-shadow card-tour" data-background="image" style="background-image: url('https://www.nps.gov/common/uploads/grid_builder/pwr/crop16_9/786411A3-1DD8-B71B-0B8B94DD67D9BA76.jpg?width=465&quality=90&mode=crop')">
                         <div id="description" class="card-block">
-                            <h4 class="card-places">Miami</h4>
+                            <h4 class="card-places">Golden Gate Park</h4>
                             <div class="card-icon">
                                 <i id="ball" class="nc-icon nc-globe"></i>
-                                <!-- <h6> 8 seats </h6>
-                         <p> $500 </p> -->
+                                <h6> 4 seats </h6>
+                                <p> $70 </p>
                             </div>
-                            <p class="card-description" style="font-size: 16px;">One of the most popular vacation spots. Though destinations the Miami area offers multiple enticements for everyone: The trendy nightlife of South Beach, Art Deco district and others.</p>
+                            <p class="card-description" style="font-size: 16px;">One of the largest urban parks in the world, Golden Gate Park stretches for three miles on the western edge of San Francisco. There’s not a single “Keep Off the Grass” sign and its 1,017 acres are a tonic for mind and body.</p>
 
                             <div class="card-footer">
                                 <a href="/buynow" class="btn btn-link btn-neutral">
@@ -106,23 +126,23 @@
         <div class="section-2">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8 offset-md-2 text-center">
+                    <!-- <div class="col-md-8 offset-md-2 text-center">
                         <h4 class="title">Your tours will be much easier</h4>
                         <h2 class="description">Live with no excuses and travel with no regrets. The world is a book full of adventures, never stop exploring.</h2>
                         <br/>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="row">
                     <div id="colum" class="col-md-4">
-                        <div id="tour-cards" class="card card-shadow card-tour" data-background="image" style="background-image: url('img/wine.jpg')">
+                        <div id="tour-cards" class="card card-shadow card-tour" data-background="image" style="background-image: url('https://assets.fodors.com/destinations/708034/lombard-street-san-francisco-california-1_main.jpg')">
                             <div id="description" class="card-block">
-                                <h4 class="card-places">Napa Valley</h4>
+                                <h4 class="card-places">Lombard Street</h4>
                                 <div class="card-icon">
                                     <i id="ball" class="nc-icon nc-air-baloon"></i>
-                                    <h6> 8 seats </h6>
-                                    <p> $300 </p>
+                                    <h6> 4 seats </h6>
+                                    <p> $60 </p>
                                 </div>
-                                <p class="card-description" style="font-size: 16px;"> Over 400 wineries, one of the world’s premier viticultural regions and famous for its prized Cabernet Sauvignon. </p>
+                                <p class="card-description" style="font-size: 16px;"> Often called the “crookedest” street in the world, this scenic road on Russian Hill features tight turns, fragrant gardens and beautiful views of the bay, Alcatraz, and Coit Tower. </p>
 
                                 <div class="card-footer">
                                     <a href="/buynow" class="btn btn-link btn-neutral">
@@ -133,15 +153,15 @@
                         </div>
                     </div>
                     <div id="colum" class="col-md-4">
-                        <div id="tour-cards" class="card card-shadow card-tour" data-background="image" style="background-image: url('img/bay.jpeg')">
+                        <div id="tour-cards" class="card card-shadow card-tour" data-background="image" style="background-image: url('https://content.alcatrazcruises.com/sites/default/files/styles/hero_medium/public/images/hero/carousel/homeslider5.jpg')">
                             <div id="description" class="card-block">
-                                <h4 class="card-places">Peninsula of San Francisco</h4>
+                                <h4 class="card-places">Alcatraz Island</h4>
                                 <div class="card-icon">
                                     <i id="ball" class="nc-icon nc-sun-fog-29"></i>
                                     <h6> 4 seats </h6>
-                                    <p> $270 </p>
+                                    <p> $100 </p>
                                 </div>
-                                <p class="card-description" style="font-size: 16px;">Separates the Bay area from the Pacific Ocean. Enjoy a stunning view of the rolling hills surrounding the bay, salt ponds and marshes.</p>
+                                <p class="card-description" style="font-size: 16px;">Now, this once infamous prison island is part of the Bay Area’s 80,000-acre Golden Gate National Recreation Area. Located one-and-a-half miles from Fisherman's Wharf, Alcatraz is one of the city's most popular attractions.</p>
 
                                 <div class="card-footer">
                                     <a href="/buynow" class="btn btn-link btn-neutral">
@@ -152,15 +172,15 @@
                         </div>
                     </div>
                     <div id="colum" class="col-md-4">
-                        <div id="tour-cards" class="card card-shadow card-tour" data-background="image" style="background-image: url('img/lake.jpg')">
+                        <div id="tour-cards" class="card card-shadow card-tour" data-background="image" style="background-image: url('https://www.calacademy.org/sites/default/files/styles/manual_crop_standard_960x540/public/assets/images/KW_IMAGES_DO_NOT_USE/admission-.jpg?itok=UYxdueCb&c=eb0b6408d76445fc498ac967143fb4b1')">
                             <div id="description" class="card-block">
-                                <h4 class="card-places">Lake Tahoe</h4>
+                                <h4 class="card-places">California Academy of Sciences</h4>
                                 <div class="card-icon">
                                     <i id="ball" class="nc-icon nc-image"></i>
-                                    <h6> 8 seats </h6>
-                                    <p> $500 </p>
+                                    <h6> 4 seats </h6>
+                                    <p> $100 </p>
                                 </div>
-                                <p class="card-description" style="font-size: 16px;">Exceedingly clear waters range in blues from aqua to cerulean to cobalt. Jagged granite mountains, some snowcapped, even at summer’s height.</p>
+                                <p class="card-description" style="font-size: 16px;">Home to an aquarium, planetarium, natural history museum, and world-class research and education programs, the California Academy of Sciences is one of San Francisco's must-see destinations.</p>
 
                                 <div class="card-footer">
                                     <a href="/buynow" class="btn btn-link btn-neutral">
@@ -176,23 +196,23 @@
         <div class="section-2">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8 offset-md-2 text-center">
+                    <!-- <div class="col-md-8 offset-md-2 text-center">
                         <h4 class="title">Explore other cities</h4>
                         <h2 class="description">Live with no excuses and travel with no regrets. The world is a book full of adventures, never stop exploring.</h2>
                         <br/>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="row">
                     <div id="colum" class="col-md-4">
-                        <div id="tour-cards" class="card card-shadow card-tour" data-background="image" style="background-image: url('img/san.jpeg')">
+                        <div id="tour-cards" class="card card-shadow card-tour" data-background="image" style="background-image: url('https://static.pexels.com/photos/34633/pexels-photo.jpg')">
                             <div id="description" class="card-block">
-                                <h4 class="card-places">San Francisco</h4>
+                                <h4 class="card-places">San Francisco Museum of Modern Art</h4>
                                 <div class="card-icon">
                                     <i id="ball" class="nc-icon nc-map-big"></i>
-                                    <!-- <h6> 8 seats </h6>
-                                             <p> $300 </p> -->
+                                    <h6> 4 seats </h6>
+                                    <p> $175 </p>
                                 </div>
-                                <p class="card-description" style="font-size: 16px;">Acrimson bridge, cable cars, a sparkling bay, and streets lined with elegant Victorian homes — San Francisco is undeniably one of the world’s great cities.</p>
+                                <p class="card-description" style="font-size: 16px;">The Snohetta-designed expansion includes 170,000 square feet of new and renovated galleries, enabling SFMOMA to display more than 32,000 modern and contemporary artworks and an entire floor dedicated solely to photography.</p>
 
                                 <div class="card-footer">
                                     <a href="/buynow" class="btn btn-link btn-neutral">
@@ -203,15 +223,15 @@
                         </div>
                     </div>
                     <div id="colum" class="col-md-4">
-                        <div id="tour-cards" class="card card-shadow card-tour" data-background="image" style="background-image: url('https://static.pexels.com/photos/534757/pexels-photo-534757.jpeg')">
+                        <div id="tour-cards" class="card card-shadow card-tour" data-background="image" style="background-image: url('http://www.thepickwickhotel.com/application/files/8814/4477/6150/yerbabuena_inset_1000x575.jpg')">
                             <div id="description" class="card-block">
-                                <h4 class="card-places">New York</h4>
+                                <h4 class="card-places">Yerba Buena Gardens</h4>
                                 <div class="card-icon">
                                     <i id="ball" class="nc-icon nc-pin-3"></i>
-                                    <!-- <h6> 4 seats </h6>
-                                             <p> $270 </p> -->
+                                    <h6> 4 seats </h6>
+                                    <p> $60 </p>
                                 </div>
-                                <p class="card-description" style="font-size: 16px;">New York is the most ethnically diverse, religiously varied, famously congested, and, in the eyes of many, the most attractive urban centre in the country.</p>
+                                <p class="card-description" style="font-size: 16px;">An award-winning public facility at the heart of San Francisco’s downtown cultural district, Yerba Buena Gardens features a children’s garden, public art, museums, a historic carousel, ice-skating and bowling centers.</p>
 
                                 <div class="card-footer">
                                     <a href="/buynow" class="btn btn-link btn-neutral">
@@ -222,15 +242,15 @@
                         </div>
                     </div>
                     <div id="colum" class="col-md-4">
-                        <div id="tour-cards" class="card card-shadow card-tour" data-background="image" style="background-image: url('https://static.pexels.com/photos/61106/pexels-photo-61106.jpeg')">
+                        <div id="tour-cards" class="card card-shadow card-tour" data-background="image" style="background-image: url('http://media.ruebarue.com/photos/places/5643440998055936/1-crissy-field-1%20%28Alison%20Taggart-Barone,%20Parks%20Conservancy%29.jpg')">
                             <div id="description" class="card-block">
-                                <h4 class="card-places">Miami</h4>
+                                <h4 class="card-places">Crissy Field</h4>
                                 <div class="card-icon">
                                     <i id="ball" class="nc-icon nc-globe"></i>
-                                    <!-- <h6> 8 seats </h6>
-                                             <p> $500 </p> -->
+                                    <h6> 4 seats </h6>
+                                    <p> $90 </p>
                                 </div>
-                                <p class="card-description" style="font-size: 16px;">One of the most popular vacation spots. Though destinations the Miami area offers multiple enticements for everyone: The trendy nightlife of South Beach, Art Deco district and others.</p>
+                                <p class="card-description" style="font-size: 16px;">This northern waterfront park in the Presidio offers spectacular views of the bay and the Golden Gate Bridge, as well as unparalleled recreational opportunities including BBQs, picnics, and beach sports.</p>
 
                                 <div class="card-footer">
                                     <a href="/buynow" class="btn btn-link btn-neutral">
