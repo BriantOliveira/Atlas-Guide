@@ -34,7 +34,7 @@ const auth = require('../auth.js');
                 //console.log(savedUser.dataValues.id)
                 console.log("saved", savedUser.first)
                 auth.setUserIDCookie(savedUser, res);
-                res.redirect('/trips')
+                res.redirect('/feed');
 
             }).catch((err)=>{
                 console.log("User Creation error:", err.message);
@@ -68,11 +68,10 @@ const auth = require('../auth.js');
                     //Set authentication cookie
                     console.log("resulting result", result)
                     auth.setUserIDCookie(data, res);
-                    res.redirect('/trips')
+                    res.redirect('/feed')
                 }else{
                     console.log('wrong username or password')
                 }
-
             });
     });
 });

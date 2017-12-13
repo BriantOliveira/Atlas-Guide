@@ -1,5 +1,12 @@
+/*******************************************
+ *  Atlas Guide
+ *      Your Source for travel itineraries
+ *      Router File
+ ******************************************/
+
 module.exports = function(app) {
-    app.get("/trips", (req, res)=>{
+
+    app.get("/feed", (req, res)=>{
         if(!req.user){
             return res.redirect("/login")
         }
@@ -15,4 +22,3 @@ module.exports = function(app) {
         res.send("post")
     })
 };
-    

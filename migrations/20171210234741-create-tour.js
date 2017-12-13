@@ -11,20 +11,41 @@ module.exports = {
       vendorId: {
         type: Sequelize.STRING
       },
-      tourPoint: {
-        type: Sequelize.TEXT
+      tourName: {
+        type: Sequelize.TEXT,
+        allowNull: false
+      },
+      description: {
+        type: Sequelize.TEXT,
+        allowNull: false
+      },
+      tourPoints: {
+        type: Sequelize.TEXT,
+        allowNull: false
+      },
+      startsAt: {
+        type: Sequelize.TEXT,
+        allowNull: false
+      },
+      endsAt: {
+        type: Sequelize.TEXT,
+        allowNull: false
       },
       restStop: {
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT,
+        allowNull: false
       },
       restStartsAt: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       tourRating: {
         type: Sequelize.INTEGER
       },
-      imageLocation: {
-        type: Sequelize.STRING
+      images: {
+        type: Sequelize.STRING,
+        allowNull: true
+
       },
       createdAt: {
         allowNull: false,
