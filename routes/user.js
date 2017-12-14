@@ -16,7 +16,7 @@ module.exports = function(app) {
             return res.redirect("/login")
         }
         console.log(req.user)
-        res.render("trips")
+        res.render("feed")
     })
 
     app.get('/profile/update', (req, res)=>{
