@@ -1,3 +1,36 @@
+const getGeo = function(){
+    console.log('getGeo')
+    return new Promise((resolve, reject)=>{
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(function(position){
+                resolve(position);
+            });
+        }else{
+            reject("Location not supported with your device.")
+        }
+    })
+    }
+
+$('.fa-compass').click(function(){
+        getGeo().then(function(position){
+            console.log(position)
+            console.log(position.coords.latitude)
+            $.ajax({
+                type: "GET",
+                url: '/locate/city/' + position.coords.latitude + "/" + position.coords.longitude,
+            }).done(function(data){
+                console.log("google rpsonese:", data)
+                city = data.results[2].address_components[0].long_name + " " + data.results[2].address_components[1].long_name
+                
+                $('input[name=city]').val(city)
+            });
+            
+        }).catch(function(err){
+            alert(err)
+        })
+
+})
+
 $(document).ready(function(){
     $(window).scroll(function(){
         if($(window).scrollTop() > $(window).height()){
@@ -96,7 +129,19 @@ function searchInCity(){
 }
 
 function pointOfInterestSearch(){
+    city = $('input[name=city]').val()
+    if(!city){
+        // getGeo().then(function(position){
+        //     console.log("default to sf")
+        //     city = "San+Francisco"
+        // }).catch(function(err){
+        //     alert(err)
+        // })
+        city = "San+Francisco"
+    }
+    console.log(city)
     query = document.getElementById('query').value.replace(" ", "+");
+    query = query + "+in+"+city
     let sourceData;
     let template;
 

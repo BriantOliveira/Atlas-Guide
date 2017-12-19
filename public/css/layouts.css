@@ -8,6 +8,10 @@ html, body {
     padding: 0;
 }
 
+.alert{
+    width: 100%;
+}
+
 #map {
     position: relative;
     top:0px;
