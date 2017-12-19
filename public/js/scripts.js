@@ -28,6 +28,8 @@ $(".form-add-itinerary").submit(function(event){
     
 })
 
+
+
 function addToItinerary(){
     
 

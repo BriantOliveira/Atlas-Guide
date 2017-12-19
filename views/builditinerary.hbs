@@ -39,12 +39,16 @@
     </div>
     
     <div class="col-sm-12 search-container">
+      
+        <!-- venue search -->
+        <form class="col-xs-12 col-md-6 search-form">
+          <input id="gmapkey" name="prodId" type="hidden" value={{gmapkey}}>
+          <input type="text" class="form-control search-location query" placeholder="City"><i class="fa fa-compass fa-2x" aria-hidden="true" title="Use current Location"></i>
 
-      <form class="col-sm-12 search-form">
-        <input id="gmapkey" name="prodId" type="hidden" value={{gmapkey}}>
-        <input type="text" class="form-control query" id="query">
-        <button type="button" class="btn btn-primary" onclick="return pointOfInterestSearch();">Find</button>
-      </form>
+          <input type="text" class="form-control query" id="query" placeholder="What are you looking for?">
+          <button type="button" class="btn btn-primary" onclick="return pointOfInterestSearch();">Find</button>
+        </form>
+      
     </div>
     <div id="results" class="col-xs-12 results clearfix ">
       <!-- Venue Results are placed in here -->
