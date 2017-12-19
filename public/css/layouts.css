@@ -48,6 +48,8 @@ html, body {
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
+    backdrop-filter: blur(3px);  
+    -webkit-backdrop-filter: blur(3px);
 }
 
 .results-row{
@@ -68,10 +70,11 @@ html, body {
     justify-content: center;
     margin: 0px 10px 10px 10px;
     padding: 10px;
+}
+.itinerary-card{
     border: 1px solid #efefef;
     box-shadow:3px 3px 8px #dedede;  
 }
-
 .ui-close{
     position: absolute;
     left: 10px;
@@ -104,6 +107,8 @@ html, body {
     background: rgba(255, 255, 255, 0.3);
     max-width: 100%;
     height: auto;
+    backdrop-filter: blur(3px);  
+    -webkit-backdrop-filter: blur(3px);
 }
 
 .collapse navbar-collapse {
@@ -141,6 +146,8 @@ html, body {
   letter-spacing: .1em;
   text-decoration: none;
   transition: opacity .3s;
+  backdrop-filter: blur(3px);  
+  -webkit-backdrop-filter: blur(3px);
 
 }
 #arrow a {
@@ -425,6 +432,8 @@ img {
     min-height: 400px;
     padding: 30px;
     top: 232px;
+    backdrop-filter: blur(3px);  
+    -webkit-backdrop-filter: blur(3px);
 }
 
 .card {
@@ -846,10 +855,10 @@ input {
 }*/
 .card:not(.card-plain):hover {
   box-shadow: 0px 12px 19px -7px rgba(0, 0, 0, 0.3);
-  transform: translateY(-10px);
-  -webkit-transform: translateY(-10px);
-  -ms-transform: translateY(-10px);
-  -moz-transform: translateY(-10px);
+  transform: translateY(-4px);
+  -webkit-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
 }
 /*.card.no-transition:hover, .card.page-carousel:hover, .card.card-refine:hover, .card.card-register:hover {
   box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15);
